@@ -9,8 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.rendez_vous_controllers">
    <children>
       <VBox prefHeight="34.0" prefWidth="577.0" style="-fx-background-color: #3191FF;">
          <children>
@@ -54,7 +53,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="294.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="259.0" style="-fx-border-color: #ffffff; -fx-border-width: 4PX; -fx-background-color: #3191ff;" text="Nouveau rendez-vous" textFill="WHITE">
+                        <Button fx:id="retour" mnemonicParsing="false" onAction="#OnclickCreerRendezVous" prefHeight="40.0" prefWidth="259.0" style="-fx-border-color: #ffffff; -fx-border-width: 4PX; -fx-background-color: #3191ff;" text="Nouveau rendez-vous" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>
@@ -87,7 +86,7 @@
             </VBox>
             <VBox prefHeight="65.0" prefWidth="279.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="261.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Gérer les tests et anamnèses" textFill="WHITE">
+                  <Button fx:id="testsAnamnse" mnemonicParsing="false" onAction="#OnclickTests_Anamnse" prefHeight="40.0" prefWidth="261.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Gérer les tests et anamnèses" textFill="WHITE">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>

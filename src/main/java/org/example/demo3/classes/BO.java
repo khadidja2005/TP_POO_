@@ -1,5 +1,8 @@
 package org.example.demo3.classes;
 
+
+
+
 public class BO {
     private static boolean numero_BO;
     private EC[] ec ;

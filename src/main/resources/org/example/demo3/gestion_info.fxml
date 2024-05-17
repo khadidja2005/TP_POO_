@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="70.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="617.0" style="-fx-background-color: #3191ff;">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des informations personnelles" wrappingWidth="254.3720703125">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+                  <HBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="325.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Marchelle bertron" wrappingWidth="150.9375">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="2.0" prefWidth="600.0" />
+      <VBox prefHeight="45.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="45.0" prefWidth="600.0">
+               <children>
+                  <Text layoutX="62.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" />
+                  <HBox alignment="CENTER" layoutX="158.0" prefHeight="47.0" prefWidth="375.0">
+                     <children>
+                        <TextField prefHeight="33.0" prefWidth="270.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Marchelle">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <Pane prefHeight="55.0" prefWidth="600.0">
+               <children>
+                  <Text layoutX="62.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
+                  <HBox alignment="CENTER" layoutX="158.0" layoutY="-6.0" prefHeight="59.0" prefWidth="375.0">
+                     <children>
+                        <TextField prefHeight="33.0" prefWidth="269.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Bertron">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox prefHeight="209.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane prefHeight="63.0" prefWidth="600.0">
+                     <children>
+                        <Text layoutX="62.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse email :" />
+                        <HBox alignment="CENTER" layoutX="158.0" layoutY="-6.0" prefHeight="59.0" prefWidth="375.0">
+                           <children>
+                              <TextField prefHeight="33.0" prefWidth="272.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="marchelle21@gmail.com">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="-2.0" layoutY="44.0" prefHeight="40.0" prefWidth="606.0">
+                           <children>
+                              <Pane prefHeight="40.0" prefWidth="592.0">
+                                 <children>
+                                    <Text layoutX="62.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numéro de téléphone :" wrappingWidth="126.779296875" />
+                                    <HBox alignment="CENTER" layoutX="212.0" layoutY="-6.0" prefHeight="64.0" prefWidth="272.0">
+                                       <children>
+                                          <TextField prefHeight="33.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="0665132395">
+                                             <font>
+                                                <Font name="Arial Bold" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Pane prefHeight="40.0" prefWidth="592.0">
+               <children>
+                  <Text layoutX="65.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse :" />
+                  <HBox alignment="CENTER" layoutX="158.0" layoutY="-11.0" prefHeight="49.0" prefWidth="375.0">
+                     <children>
+                        <TextField prefHeight="33.0" prefWidth="275.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="ALger,Oued Smar">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+            <Pane prefHeight="40.0" prefWidth="592.0">
+               <children>
+                  <Text layoutX="65.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mot de passe :" wrappingWidth="81.49609375" />
+                  <HBox alignment="CENTER" layoutX="158.0" layoutY="-6.0" prefHeight="49.0" prefWidth="375.0">
+                     <children>
+                        <TextField prefHeight="35.0" prefWidth="277.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text=".........">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

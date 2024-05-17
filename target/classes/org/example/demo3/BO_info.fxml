@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="BO (nom Bo)">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom de Bo : " />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="Non de BO" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="168.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Anamnese :">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="432.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Ajouter question" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question1 : " />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="consign de question 1" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question2 : " />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="consign de question 2" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="168.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="QuestionnaireTest :">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="143.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Ajouter QCM" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="149.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Ajouter QCU" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="173.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Ajouter Qst libre" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question1 : " />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="consign de question 1" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Question 2 : " />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="consign de question 2" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="168.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ExercicesTest :">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="40.0" right="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="432.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Ajouter exercice" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Exercice 1:" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="483.0">
+               <children>
+                  <TextField text="description de l'exercice" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -10,8 +10,10 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("prise_rendez_vous.fxml"));
         //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Type_de_rendez_vous.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Dossier_patient.fxml"));
-
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Dossier_patient.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Liste_BO.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("BO_info.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Creer_BO.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 500);
         //stage.setTitle("Hello!");
         stage.setScene(scene);

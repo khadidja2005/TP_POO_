@@ -7,6 +7,7 @@ module org.example.demo3 {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires com.fasterxml.jackson.databind;
 
     opens org.example.demo3 to javafx.fxml;
     exports org.example.demo3;

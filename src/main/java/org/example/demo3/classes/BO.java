@@ -1,7 +1,7 @@
 package org.example.demo3.classes;
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class BO {
     private static boolean numero_BO;
@@ -70,8 +70,6 @@ public class BO {
     public void modifierTrouble (trouble trouble , int index){
         this.trouble[index] = trouble ;
     }
- public static void main(String[] arg){
-     ObjectMapper mapper = new ObjectMapper();
- }
+
 
 }

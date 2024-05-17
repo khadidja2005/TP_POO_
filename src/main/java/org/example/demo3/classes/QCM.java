@@ -5,8 +5,8 @@ public class QCM extends questionnaire {
     private String[] propostions;
     private String reponse;
 
-    public QCM() {
-       // super(qst);
+    public QCM(String qst) {
+        //super(qst);
         this.propostions = new String[10];
         this.reponse = " ";
     }

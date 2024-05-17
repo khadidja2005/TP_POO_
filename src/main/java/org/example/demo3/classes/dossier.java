@@ -2,6 +2,7 @@ package org.example.demo3.classes;
 
 public class dossier {
     private static int numero = 1;
+
     private BO[] BO=new BO[5];
     private rendez_vous[] rendez_vous=new rendez_vous[25];
     private fichier_de_suivi[] fichier_de_suivi=new fichier_de_suivi[25];

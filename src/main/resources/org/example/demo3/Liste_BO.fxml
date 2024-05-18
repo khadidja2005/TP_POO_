@@ -26,12 +26,12 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Anamneses existants" />
+                  <Button fx:id="anamnses" mnemonicParsing="false" onAction="#OnlicklisteAnamneses" text="Anamneses existants" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="tests existants" />
+                  <Button fx:id="tests" mnemonicParsing="false" onAction="#OnlicklisteTests" text="tests existants" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

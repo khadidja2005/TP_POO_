@@ -17,6 +17,11 @@ public class rendez_vous_controllers {
     @FXML
     private Button Creer_BO;
     @FXML
+    private Button tests ;
+
+    @FXML
+    private Button anamnses ;
+    @FXML
 
     private void initialize() {
         System.out.println("Rendez-vous controller initialized");
@@ -110,12 +115,32 @@ public class rendez_vous_controllers {
         }
     }
     @FXML
-    private void OnclickCreerBO () {
+    private void OnclickCreerBO (ActionEvent e) {
         try {
        HelloApplication.loadPage("Creer_BO.fxml");
         } catch(IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
+        }
+    }
+    @FXML
+    private void OnlicklisteAnamneses (ActionEvent e) {
+        try {
+         HelloApplication.loadPage("Liste_anamnese.fxml");
+        } catch(IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+
+        }
+    }
+    @FXML
+    private void OnlicklisteTests (ActionEvent e) {
+        try {
+            HelloApplication.loadPage("Liste_Tests.fxml");
+        } catch(IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+
         }
     }
 

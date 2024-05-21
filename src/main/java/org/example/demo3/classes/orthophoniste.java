@@ -1,6 +1,8 @@
 package org.example.demo3.classes;
 
-public class orthophoniste {
+import java.io.Serializable;
+
+public class orthophoniste implements Serializable {
 
     private String nom;
     private String prenom;
@@ -16,6 +18,9 @@ public class orthophoniste {
         this.numero_telephone = numero_telephone;
         this.adresse_email = adresse_email;
         this.mot_de_passe = mot_de_passe;
+
+    }
+    public orthophoniste () {
 
     }
 

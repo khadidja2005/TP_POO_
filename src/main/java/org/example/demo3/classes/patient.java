@@ -1,6 +1,8 @@
 package org.example.demo3.classes;
 
-public class patient {
+import java.io.Serializable;
+
+public class patient implements Serializable{
 
     private String nom;
     private String prenom;

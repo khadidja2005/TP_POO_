@@ -1,10 +1,9 @@
 package org.example.demo3.classes;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Manage_doctor {
-private orthophoniste doctor = new orthophoniste();
+private Orthophoniste doctor = new Orthophoniste();
 
 private static final String FILE_NAME = "orthophoniste.txt";
 
@@ -15,10 +14,10 @@ private static final String FILE_NAME = "orthophoniste.txt";
             System.out.println("No existing data found. Starting fresh.");
         }
     }
-    public orthophoniste getDoctor () {
+    public Orthophoniste getDoctor () {
         return doctor;
     }
-    public void updateDocor (orthophoniste doctor) {
+    public void updateDocor (Orthophoniste doctor) {
         this.doctor = doctor ;
         saveData();
     }

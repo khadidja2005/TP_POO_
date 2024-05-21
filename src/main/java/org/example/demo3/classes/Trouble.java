@@ -1,15 +1,17 @@
 package org.example.demo3.classes;
 
-public class trouble {
+import java.io.Serializable;
+
+public class Trouble implements Serializable {
     private String nom;
     private Categorie_trouble categorie_trouble;
 
 
-    public trouble(String nom , Categorie_trouble categorie_trouble) {
+    public Trouble(String nom , Categorie_trouble categorie_trouble) {
         this.nom = nom;
         this.categorie_trouble = categorie_trouble;
     }
-    public trouble() {
+    public Trouble() {
 
     }
 
@@ -24,6 +26,13 @@ public class trouble {
     }
     public void setCategorie_trouble(Categorie_trouble categorie_trouble) {
         this.categorie_trouble = categorie_trouble;
+    }
+    @Override
+    public String toString() {
+        return "Trouble{" +
+                "nom='" + nom + '\'' +
+                ", categorie_trouble=" + categorie_trouble +
+                '}';
     }
 
 }

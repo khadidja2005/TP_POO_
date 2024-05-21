@@ -1,17 +1,17 @@
 package org.example.demo3.classes;
 
-public class consultation extends rendez_vous {
+public class Consultation extends Rendez_vous {
     private String nom;
     private String prenom;
     private int age;
 
     // Default constructor
-    public consultation(boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Consultation(boolean premiere_visite, String duree, String observation, String date, int heure) {
         super(premiere_visite,duree,observation,date,heure); // Call the superclass constructor
     }
 
     // Constructor with parameters
-    public consultation(String nom, String prenom, int age,boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Consultation(String nom, String prenom, int age, boolean premiere_visite, String duree, String observation, String date, int heure) {
         super(premiere_visite,duree,observation,date,heure); // Call the superclass constructor
         this.nom = nom;
         this.prenom = prenom;

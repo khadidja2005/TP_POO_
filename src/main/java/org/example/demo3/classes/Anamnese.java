@@ -1,12 +1,12 @@
 package org.example.demo3.classes;
 
-public class anamnese {
+public class Anamnese {
     private QST_libre[] qst_libre;
 
-    public anamnese(QST_libre[] qst_libre) {
+    public Anamnese(QST_libre[] qst_libre) {
         this.qst_libre = qst_libre;
     }
-    public anamnese() {
+    public Anamnese() {
     }
     public QST_libre[] getQst_libre() {
         return qst_libre;

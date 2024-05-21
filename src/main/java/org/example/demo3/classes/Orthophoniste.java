@@ -2,7 +2,7 @@ package org.example.demo3.classes;
 
 import java.io.Serializable;
 
-public class orthophoniste implements Serializable {
+public class Orthophoniste implements Serializable {
 
     private String nom;
     private String prenom;
@@ -11,7 +11,7 @@ public class orthophoniste implements Serializable {
     private String adresse_email;
     private String mot_de_passe;
 
-    public orthophoniste(String nom, String prenom,String adresse_email,String adresse, int numero_telephone, String mot_de_passe) {
+    public Orthophoniste(String nom, String prenom, String adresse_email, String adresse, int numero_telephone, String mot_de_passe) {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -20,7 +20,7 @@ public class orthophoniste implements Serializable {
         this.mot_de_passe = mot_de_passe;
 
     }
-    public orthophoniste () {
+    public Orthophoniste() {
 
     }
 

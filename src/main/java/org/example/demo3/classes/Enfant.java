@@ -1,15 +1,15 @@
 package org.example.demo3.classes;
 
-public class enfant extends patient
+public class Enfant extends Patient
 {
     String classe_detude;
     int numero_telephone;
 
-    public enfant(String nom, String prenom,String adresse, int date_de_naissance, String lieu_de_naissance, dossier dossier) {
+    public Enfant(String nom, String prenom, String adresse, String date_de_naissance, String lieu_de_naissance, Dossier dossier) {
         super(nom, prenom, adresse,date_de_naissance,lieu_de_naissance,dossier);
     }
 
-    public enfant(String classe_detude,int numero_telephone,String nom, String prenom,String adresse, int date_de_naissance, String lieu_de_naissance, dossier dossier){
+    public Enfant(String classe_detude, int numero_telephone, String nom, String prenom, String adresse, String date_de_naissance, String lieu_de_naissance, Dossier dossier){
 
         super(nom, prenom, adresse,date_de_naissance,lieu_de_naissance,dossier);
         this.classe_detude=classe_detude;

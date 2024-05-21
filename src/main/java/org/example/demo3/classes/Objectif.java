@@ -1,6 +1,6 @@
 package org.example.demo3.classes;
 
-public class objectif {
+public class Objectif {
 
     public enum terme {
         COURT_TERME,
@@ -11,7 +11,7 @@ public class objectif {
     private String nom;
     private terme terme;
 
-    public objectif(String nom, terme terme) {
+    public Objectif(String nom, terme terme) {
         this.nom = nom;
         this.terme = terme;}
 

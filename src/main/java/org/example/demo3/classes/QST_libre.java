@@ -1,6 +1,6 @@
 package org.example.demo3.classes;
 
-public class QST_libre extends questionnaire{
+public class QST_libre extends Questionnaire {
     private String reponse;
 
     public QST_libre(String reponse) {
@@ -15,5 +15,12 @@ public class QST_libre extends questionnaire{
 
     public void setReponse(String reponse) {
         this.reponse = reponse;
+    }
+    @Override
+    public String toString() {
+        return "QST_libre{" +
+                "reponse='" + reponse + '\'' +
+                ", question='" + getQuestion() + '\'' +
+                '}';
     }
 }

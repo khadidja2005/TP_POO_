@@ -1,6 +1,6 @@
 package org.example.demo3.classes;
 
-public class QCU extends questionnaire {
+public class QCU extends Questionnaire {
     private String[] propostions;
     private String reponse;
 
@@ -24,5 +24,12 @@ public class QCU extends questionnaire {
     }
     public void setReponse(String reponse) {
         this.reponse = reponse;
+    }
+    @Override
+    public String toString() {
+        return "QCU{" +
+                "propostions=" + propostions +
+                ", reponse='" + reponse + '\'' +
+                '}';
     }
 }

@@ -1,22 +1,22 @@
 package org.example.demo3.classes;
 
-public class exercice {
+public class Exercice {
     private String consigne ;
     private Boolean reponse ;
     private boolean Materiel_utilise;
     private String nom_Materiel;
     private int score ;
-    public exercice() {
+    public Exercice() {
         this.consigne = " ";
     }
-    public exercice (String consigne) {
+    public Exercice(String consigne) {
         this.consigne = consigne;
     }
-   public exercice (String consigne, Boolean reponse) {
+   public Exercice(String consigne, Boolean reponse) {
         this.consigne = consigne;
         this.reponse = reponse;
     }
-    public exercice (String consigne, Boolean reponse, boolean Materiel_utilise, String nom_Materiel) {
+    public Exercice(String consigne, Boolean reponse, boolean Materiel_utilise, String nom_Materiel) {
         this.consigne = consigne;
         this.reponse = reponse;
         this.Materiel_utilise = Materiel_utilise;

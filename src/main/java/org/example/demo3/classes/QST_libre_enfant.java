@@ -9,5 +9,11 @@ public Categorie_enfant getCategorie_enfant () {
 public void setCategorie_enfant (Categorie_enfant categorie ) {
     this.categorie_enfant = categorie ;
 }
-
+    @Override
+    public String toString() {
+        return "QST_libre_enfant{" +
+                "reponse='" + getReponse() + '\'' +
+                ", categorie_enfant=" + categorie_enfant +
+                '}';
+    }
 }

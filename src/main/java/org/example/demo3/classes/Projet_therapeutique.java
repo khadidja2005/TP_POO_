@@ -1,6 +1,8 @@
 package org.example.demo3.classes;
 
-public class Projet_therapeutique {
+import java.io.Serializable;
+
+public class Projet_therapeutique implements Serializable {
     private String texte;
 
     public Projet_therapeutique(String texte) {
@@ -15,5 +17,10 @@ public class Projet_therapeutique {
     public void setTexte(String texte) {
         this.texte = texte;
     }
-
+    @Override
+    public String toString() {
+        return "Projet_therapeutique{" +
+                "texte='" + texte + '\'' +
+                '}';
+    }
 }

@@ -1,11 +1,14 @@
 package org.example.demo3.classes;
 
-public class EC {
+import java.io.Serializable;
+import java.util.Arrays;
+
+public class EC implements Serializable {
     private String observation_clinique ;
-    private test[] test1 ;
+    private Test[] test1 ;
 
     public EC(int size) {
-        this.test1 = new test[size];
+        this.test1 = new Test[size];
         this.observation_clinique = " ";
     }
 
@@ -15,13 +18,13 @@ public class EC {
     public void setObservation_clinique(String observation_clinique) {
         this.observation_clinique = observation_clinique;
     }
-    public test[] getTest() {
+    public Test[] getTest() {
         return test1;
     }
-    public void setTest(test[] test) {
+    public void setTest(Test[] test) {
         this.test1 = test;
     }
-    public void addTest(test test) {
+    public void addTest(Test test) {
         for (int i = 0; i < this.test1.length; i++) {
             if (this.test1[i] == null) {
                 this.test1[i] = test;
@@ -29,7 +32,7 @@ public class EC {
             }
         }
     }
-    public void removeTest(test test) {
+    public void removeTest(Test test) {
         for (int i = 0; i < this.test1.length; i++) {
             if (this.test1[i] == test) {
                 this.test1[i] = null;
@@ -37,9 +40,14 @@ public class EC {
             }
         }
     }
-    public void updateTest(test test, int index) {
+    public void updateTest(Test test, int index) {
         this.test1[index] = test;
     }
-
-
+    @Override
+    public String toString() {
+        return "EC{" +
+                "observation_clinique='" + observation_clinique + '\'' +
+                ", test1=" + Arrays.toString(test1) +
+                '}';
+    }
 }

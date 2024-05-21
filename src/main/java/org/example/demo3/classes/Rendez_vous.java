@@ -1,6 +1,8 @@
 package org.example.demo3.classes;
 
-public class rendez_vous {
+import java.io.Serializable;
+
+public class Rendez_vous implements Serializable {
 
    private boolean premiere_visite;
    private String duree;
@@ -9,7 +11,7 @@ public class rendez_vous {
    private int heure;
 
 
-    public rendez_vous(boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Rendez_vous(boolean premiere_visite, String duree, String observation, String date, int heure) {
         this.premiere_visite = premiere_visite;
         this.duree = duree;
         this.observation = observation;
@@ -59,6 +61,17 @@ public class rendez_vous {
 
     public void setHeure(int heure) {
         this.heure = heure;
+    }
+
+    @Override
+    public String toString() {
+        return "Rendez_vous{" +
+                "premiere_visite=" + premiere_visite +
+                ", duree='" + duree + '\'' +
+                ", observation='" + observation + '\'' +
+                ", date='" + date + '\'' +
+                ", heure=" + heure +
+                '}';
     }
 
 }

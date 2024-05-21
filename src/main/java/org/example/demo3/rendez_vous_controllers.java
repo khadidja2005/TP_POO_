@@ -8,34 +8,23 @@ import java.io.IOException;
 public class rendez_vous_controllers {
     @FXML
     private Button retour;
-    @FXML
-    private Button creerAtelier;
-    @FXML
-    private Button testsAnamnse;
-    @FXML
-    private Button BO;
-    @FXML
-    private Button Creer_BO;
-    @FXML
-    private Button tests ;
 
     @FXML
-    private Button anamnses ;
+    private Button gererPatients;
+
+    @FXML
+    private Button AfficherPas;
+
+    @FXML
+    private Button AjouterPas;
+
     @FXML
 
     private void initialize() {
         System.out.println("Rendez-vous controller initialized");
     }
 
-    @FXML
-    private void HandelButtonAction(ActionEvent e) {
-        try {
-            HelloApplication.loadPage("Type_de_rendez_vous.fxml");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-        }
-    }
+
     @FXML
     private void HandelRetourAction2(ActionEvent e) {
         try {
@@ -45,103 +34,39 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
-    @FXML
-    private void OnclickCreerRendezVous ( ActionEvent e) {
-        try {
-            HelloApplication.loadPage("Type_de_rendez_vous.fxml");
 
-        }catch (IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-        }
 
-    }
+
 
     @FXML
-    private void onclickconsultation (ActionEvent e) {
+    private void switchTolistePatients(ActionEvent e) {
         try {
-            HelloApplication.loadPage("prise_rendez_vous.fxml");
-        } catch (Exception ex) {
+            HelloApplication.loadPage("liste_patients.fxml");
+        } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
     }
-    @FXML
-    private void OnclickSuivi ( ActionEvent e) {
-        try {
-            HelloApplication.loadPage("Creer_Suivi.fxml");
 
-        } catch (IOException ex){
+    @FXML
+    private void switchToAfficherPatients(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("Afficher_patient.fxml");
+        } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
+    }
+    @FXML
+    private void switchToAjouterPatients(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("Ajouter_patient.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
 
-    }
-    @FXML
-    private  void OnClickAtelier (ActionEvent e) {
-        try {
-         HelloApplication.loadPage("Creer_Atelier.fxml");
-        }catch ( IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-        }
-    }
-    @FXML
-    private void OnclickTests_Anamnse (ActionEvent e) {
-        try {
-         HelloApplication.loadPage("Liste_BO.fxml");
-        }
-        catch (Exception ex){
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-        }
-    }
-    @FXML
-    private void Onclick_BO (ActionEvent e) {
-        try {
-            HelloApplication.loadPage("BO_info.fxml");
-        }catch(Exception ex) {
-         ex.printStackTrace();
-         System.out.println("Error: " + ex.getMessage());
-        }
-    }
-    @FXML
-    private void retourListe_BO (ActionEvent e) {
-        try {
-         HelloApplication.loadPage("Liste_BO.fxml");
-        } catch(IOException ex) {
-           ex.printStackTrace();
-           System.out.println("Error: " + ex.getMessage());
-        }
-    }
-    @FXML
-    private void OnclickCreerBO (ActionEvent e) {
-        try {
-       HelloApplication.loadPage("Creer_BO.fxml");
-        } catch(IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-        }
-    }
-    @FXML
-    private void OnlicklisteAnamneses (ActionEvent e) {
-        try {
-         HelloApplication.loadPage("Liste_anamnese.fxml");
-        } catch(IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-
-        }
-    }
-    @FXML
-    private void OnlicklisteTests (ActionEvent e) {
-        try {
-            HelloApplication.loadPage("Liste_Tests.fxml");
-        } catch(IOException ex) {
-            ex.printStackTrace();
-            System.out.println("Error: " + ex.getMessage());
-
-        }
-    }
 
 }
+

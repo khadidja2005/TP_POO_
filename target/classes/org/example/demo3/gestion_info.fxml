@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -131,11 +131,7 @@
                   <Text layoutX="65.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mot de passe :" wrappingWidth="81.49609375" />
                   <HBox alignment="CENTER" layoutX="158.0" layoutY="-6.0" prefHeight="49.0" prefWidth="375.0">
                      <children>
-                        <TextField prefHeight="35.0" prefWidth="277.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text=".........">
-                           <font>
-                              <Font name="Arial Bold" size="12.0" />
-                           </font>
-                        </TextField>
+                        <PasswordField prefHeight="33.0" prefWidth="276.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="march21" />
                      </children>
                   </HBox>
                </children>

@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.rendez_vous_controllers">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.PatientController">
    <children>
       <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
          <children>
             <VBox prefHeight="25.0" prefWidth="165.0">
                <children>
-                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#HandelButtonAction" text="Retour" textAlignment="CENTER" />
+                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#OnclickCreerRendezVous" text="Retour" textAlignment="CENTER" />
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -40,72 +40,89 @@
             <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
          </padding>
       </HBox>
-      <HBox prefHeight="49.0" prefWidth="600.0">
+      <HBox prefHeight="44.0" prefWidth="544.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="41.0" prefWidth="93.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="93.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" wrappingWidth="45.67706298828125" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom :" wrappingWidth="127.67706298828125">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="41.0" prefWidth="462.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="44.0" prefWidth="183.0">
                <children>
-                  <TextField promptText="adjali" />
+                  <TextField prefHeight="25.0" prefWidth="197.0" promptText="Adjali" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox prefHeight="48.0" prefWidth="600.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="41.0" prefWidth="93.0">
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="93.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom : " wrappingWidth="58.343719720840454" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom :" wrappingWidth="127.34371972084045" />
                </children>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="55.0" prefWidth="462.0">
+            <VBox alignment="CENTER" prefHeight="47.0" prefWidth="178.0">
                <children>
-                  <TextField promptText="khadidja" />
+                  <TextField prefHeight="25.0" prefWidth="197.0" promptText="khadidja" />
                </children>
             </VBox>
          </children>
       </HBox>
       <HBox prefHeight="37.0" prefWidth="600.0">
          <children>
-            <VBox alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="67.0">
+            <VBox prefHeight="37.0" prefWidth="67.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age : " wrappingWidth="41.010345697402954" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age : " wrappingWidth="103.01034569740295">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="53.0" prefWidth="46.0">
-               <children>
-                  <TextField prefHeight="25.0" prefWidth="75.0" promptText="30" />
-               </children>
-            </VBox>
+            <VBox alignment="CENTER" prefHeight="36.0" prefWidth="25.0" />
+            <TextField prefHeight="25.0" prefWidth="177.0" promptText="30" />
          </children>
       </HBox>
-      <HBox prefHeight="40.0" prefWidth="600.0">
+      <HBox alignment="BOTTOM_LEFT" prefHeight="40.0" prefWidth="600.0">
          <children>
-            <VBox alignment="CENTER" prefHeight="63.0" prefWidth="129.0">
+            <HBox prefHeight="37.0" prefWidth="600.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu de naissance : " wrappingWidth="101.67705750465393" />
+                  <VBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="67.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu de naissance" wrappingWidth="103.01034569740295">
+                           <VBox.margin>
+                              <Insets left="30.0" />
+                           </VBox.margin>
+                        </Text>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="20.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="36.0" prefWidth="25.0" />
+                  <TextField prefHeight="25.0" prefWidth="177.0" promptText="Alger" />
                </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="40.0" prefWidth="424.0">
-               <children>
-                  <TextField prefHeight="25.0" prefWidth="403.0" promptText="alger" />
-               </children>
-            </VBox>
+            </HBox>
          </children>
       </HBox>
       <HBox prefHeight="86.0" prefWidth="600.0">
          <children>
             <VBox alignment="CENTER" prefHeight="71.0" prefWidth="149.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Motif de consultation : " wrappingWidth="127.01036286354065" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Motif de consultation : " wrappingWidth="127.01036286354065">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Text>
                </children>
             </VBox>
             <VBox alignment="CENTER" prefHeight="85.0" prefWidth="405.0">
                <children>
-                  <TextArea prefHeight="51.0" prefWidth="417.0" promptText="ecrivez ici" />
+                  <TextArea prefHeight="67.0" prefWidth="405.0" promptText="ecrivez ici" />
                </children>
             </VBox>
          </children>

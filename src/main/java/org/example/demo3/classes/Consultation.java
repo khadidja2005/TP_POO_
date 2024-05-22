@@ -47,4 +47,12 @@ public class Consultation extends Rendez_vous {
     public void setAge(int age) {
         this.age = age;
     }
+    @Override
+    public String toString() {
+        return "Consultation{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

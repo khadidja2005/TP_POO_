@@ -51,7 +51,7 @@ public class Manage_BO implements Serializable {
     public BO[] getBOs() {
         return boList;
     }
-    private void saveBOs() {
+    public void saveBOs() {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
             oos.writeObject(boList);
             System.out.println("saved successfully");
@@ -61,7 +61,7 @@ public class Manage_BO implements Serializable {
         }
     }
 
-    private void loadBOs() {
+    public void loadBOs() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
             boList = (BO[]) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {

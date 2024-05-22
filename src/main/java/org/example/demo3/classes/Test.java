@@ -31,6 +31,14 @@ public class Test implements Serializable {
     public void setScore(float score) {
         this.score = score;
     }
+    @Override
+    public String toString() {
+        return "Test{" +
+                "capacite=" + capacite +
+                ", compte_rendu='" + compte_rendu + '\'' +
+                ", score=" + score +
+                '}';
+    }
 
 
 }

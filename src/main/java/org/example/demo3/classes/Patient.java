@@ -62,6 +62,19 @@ public class Patient implements Serializable{
     public Dossier getDosssier (){
         return dossier;
     }
+    @Override
+    public String toString () {
+
+        return "Patient{" +
+                "nom :" + nom +
+                "prenom :" + prenom +
+                "adresse :"+ adresse +
+                "date_de_naissance" + date_de_naissance +
+                "lieu_de_naissance" + lieu_de_naissance +
+                "Dossier" + dossier.toString() +
+                "}" ;
+
+    }
 
 
 }

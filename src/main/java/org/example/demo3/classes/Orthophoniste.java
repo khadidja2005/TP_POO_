@@ -61,4 +61,15 @@ public class Orthophoniste implements Serializable {
     public void setMot_de_passe(String mot_de_passe) {
         this.mot_de_passe = mot_de_passe;
     }
+    @Override
+    public String toString() {
+        return "Orthophoniste{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", adresse='" + adresse + '\'' +
+                ", numero_telephone=" + numero_telephone +
+                ", adresse_email='" + adresse_email + '\'' +
+                ", mot_de_passe='" + mot_de_passe + '\'' +
+                '}';
+    }
 }

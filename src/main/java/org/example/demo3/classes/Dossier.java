@@ -1,6 +1,7 @@
 package org.example.demo3.classes;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class Dossier implements Serializable {
     private static int numero = 1;
@@ -58,6 +59,15 @@ public class Dossier implements Serializable {
     public void set_fichier_de_suivi(Fichier_de_suivi[] _fichier_de_suivi) {
         this.fichier_de_suivi = fichier_de_suivi;
     }
+    @Override
+    public String toString() {
+        return "Dossier{" +
+                "BO=" + Arrays.toString(BO) +
+                ", rendez_vous: " + Arrays.toString(rendez_vous)+
+                ", fichier_de_suivi: " + Arrays.toString(fichier_de_suivi) +
+                '}';
+    }
+
 
 
 }

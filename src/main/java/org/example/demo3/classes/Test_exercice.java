@@ -1,5 +1,7 @@
 package org.example.demo3.classes;
 
+import java.util.Arrays;
+
 public class Test_exercice extends Test {
 
     private Exercice[] exercices ;
@@ -38,7 +40,7 @@ public class Test_exercice extends Test {
     @Override
     public String toString() {
         return "Test_exercice{" +
-                "exercices=" + exercices +
+                "exercices=" + Arrays.toString(exercices) +
                 '}';
     }
 

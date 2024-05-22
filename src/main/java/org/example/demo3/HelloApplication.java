@@ -26,6 +26,8 @@ public class HelloApplication extends Application {
         primaryStage.show();
     }
     public static void main(String[] args) {
+        //##################################################################################
+        // ############# CREER UNE LISTE DES BOs #############################################
         QST_libre QST_libre_1 = new QST_libre();
         QST_libre_1.setQuestion("Pouvez-vous me décrire comment vous ressentez votre difficulté à parler ?");
         QST_libre Qst_libre_2  = new QST_libre();
@@ -118,27 +120,46 @@ public class HelloApplication extends Application {
         //manage_bo2.displayBOs();
         //System.out.println(manage_bo.getBOs().getFirst().getEc()[0].getTest()[0].getCapacite());
         //System.out.println(manage_bo2.getBOs().size());
-        /*Patient patient = new Patient();
+
+        //Manage_BO manage_bo2 = new Manage_BO(10);
+        //Manage_BO manage_bo = new Manage_BO(new BO[]{bo1 , bo2} ,10 );
+        //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
+        //manage_bo2.addBO(bo1);
+        //manage_bo2.addBO(bo2);
+        Manage_BO bo22 = new Manage_BO(10);
+        bo22.addBO(bo1);
+        bo22.addBO(bo2);
+        //bo22.loadBOs();
+        //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
+        // #####################################################################################
+        //##############  CREER PATIENT  ####################################################
+        Patient patient = new Patient();
         patient.setAdresse("Oued Smar Alger");
         patient.setDate_de_naissance("02/02/2005");
         patient.setNom("Brakta");
         patient.setPrenom("Khadidja");
         patient.setLieu_de_naissance("algiers");
         Dossier doc = new Dossier();
-        doc.set_BO(manage_bo.getBOs().toArray(new BO[0]));
+        doc.set_BO(bo22.getBOs());
         patient.setDossier(doc);
-        Manage_patients manage_patient = new Manage_patients();
-        manage_patient.addpatient(patient);*/
-        //Manage_BO manage_bo2 = new Manage_BO(10);
-        Manage_BO manage_bo = new Manage_BO(new BO[]{bo1 , bo2} ,10 );
-        //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
-        //manage_bo2.addBO(bo1);
-        //manage_bo2.addBO(bo2);
-
+        Manage_patients manage_patient = new Manage_patients(10);
+        //manage_patient.removePatient(1);
+        //
+        manage_patient.addPatient(patient);
+        manage_patient.displayPatients();
         //manage_bo2.displayBOs();
-
-
-
+        // ########################################################################################
+        // #################  CREER ORTHOPHONISTE  ################################################
+        Orthophoniste orthophoniste = new Orthophoniste();
+        orthophoniste.setAdresse("Oued Smar Alger");
+        orthophoniste.setAdresse_email("mk_brakta@esi.dz");
+        orthophoniste.setMot_de_passe("123456");
+        orthophoniste.setNom("Brakta");
+        orthophoniste.setPrenom("Khadidja");
+        orthophoniste.setNumero_telephone(055555555);
+        Manage_doctor manage_doctor = new Manage_doctor(10);
+        manage_doctor.addOrtho(orthophoniste);
+        manage_doctor.displayOrthos();
         launch();
     }
 }

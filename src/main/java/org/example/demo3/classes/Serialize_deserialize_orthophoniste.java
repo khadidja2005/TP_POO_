@@ -5,7 +5,7 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class Serialize_deserialize_orthophoniste {
+public class Serialize_deserialize_orthophoniste  {
     public static void serialize (Orthophoniste doctor , String filename) throws IOException {
         try(FileOutputStream fileout = new FileOutputStream(filename) ;
             ObjectOutputStream out = new ObjectOutputStream(fileout)) {

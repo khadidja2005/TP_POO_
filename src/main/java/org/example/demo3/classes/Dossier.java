@@ -2,7 +2,7 @@ package org.example.demo3.classes;
 
 import java.io.Serializable;
 
-public class Dossier {
+public class Dossier implements Serializable {
     private static int numero = 1;
 
     private BO[] BO=new BO[10];

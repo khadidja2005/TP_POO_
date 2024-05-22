@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Trouble implements Serializable {
     private String nom;
-    private enum Categorie_trouble categorie_trouble;
+    private Categorie_trouble categorie_trouble;
 
 
     public Trouble(String nom , Categorie_trouble categorie_trouble) {

@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.example.demo3.classes.*;
 
-import java.io.IOException;
+import java.io.*;
 
 public class HelloApplication extends Application {
     private static Stage primaryStage;
@@ -25,7 +25,6 @@ public class HelloApplication extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
     public static void main(String[] args) {
         QST_libre QST_libre_1 = new QST_libre();
         QST_libre_1.setQuestion("Pouvez-vous me décrire comment vous ressentez votre difficulté à parler ?");
@@ -104,16 +103,21 @@ public class HelloApplication extends Application {
         Trouble trouble3 = new Trouble("trouble3" , Categorie_trouble.trouble_neuro_developpementaux);
         Trouble trouble4 = new Trouble("trouble4" , Categorie_trouble.trouble_cognitifs);
         bo2.setTrouble(new Trouble[]{trouble3 , trouble4});
-        Manage_BO manage_bo2 = new Manage_BO();
-        manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
+        //Manage_BO manageBo = new Manage_BO();
+        //manageBo.addBO(bo1);
+        //manageBo.addBO(bo2);
+        //manageBo.displayBOs();
+        //System.out.println(manageBo.getBOs().size());
+        //Manage_BO manage_bo2 = new Manage_BO();
+        //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
         //manage_bo2.addBO(bo1);
         //manage_bo2.addBO(bo2);
         //manage_bo2.removeBO(bo2);
         //manage_bo2.removeBO(bo1);
 
-        manage_bo2.displayBOs();
+        //manage_bo2.displayBOs();
         //System.out.println(manage_bo.getBOs().getFirst().getEc()[0].getTest()[0].getCapacite());
-        System.out.println(manage_bo2.getBOs().size());
+        //System.out.println(manage_bo2.getBOs().size());
         /*Patient patient = new Patient();
         patient.setAdresse("Oued Smar Alger");
         patient.setDate_de_naissance("02/02/2005");
@@ -125,6 +129,16 @@ public class HelloApplication extends Application {
         patient.setDossier(doc);
         Manage_patients manage_patient = new Manage_patients();
         manage_patient.addpatient(patient);*/
+        //Manage_BO manage_bo2 = new Manage_BO(10);
+        Manage_BO manage_bo = new Manage_BO(new BO[]{bo1 , bo2} ,10 );
+        //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
+        //manage_bo2.addBO(bo1);
+        //manage_bo2.addBO(bo2);
+
+        //manage_bo2.displayBOs();
+
+
+
         launch();
     }
 }

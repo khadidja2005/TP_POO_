@@ -1,63 +1,77 @@
 package org.example.demo3.classes;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Manage_BO {
-    private List<BO> BOs = new ArrayList<>();
-    int number_of_BOs = BOs.size();
-    private static final String FILE_NAME = "BOs.txt";
+public class Manage_BO implements Serializable {
+    private static final String FILE_NAME = "src/main/resources/DATA/bo.txt";
+    private BO[] boList;
 
-    public Manage_BO() {
-     loadData();
+    public Manage_BO(int length) {
+        boList = new BO[length];
+        loadBOs();
     }
-    private void loadData() {
-        try {
-            BOs = Serialize_deserialize_BO.deserialize(FILE_NAME);
-            number_of_BOs = BOs.size();
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("No existing data found. Starting fresh.");
+   public Manage_BO (BO[] bo ,int  size) {
+        boList = new BO[size] ;
+        boList = bo;
+        saveBOs();
+   }
+
+    public void addBO(BO bo) {
+     try {
+       for (int i =0 ; i< boList.length ; i++) {
+         if(boList[i] == null) {
+             boList[i] = bo;
+             saveBOs();
+             break;
+
+         }
+       }
+     }catch(ArrayIndexOutOfBoundsException ex) {
+         System.out.println(ex);
+
         }
     }
-    public void addBO(BO obj) {
-        BOs.add(obj);
-        number_of_BOs++;
-        saveData();
-    }
-
-    public void removeBO(BO obj) {
-        BOs.remove(obj);
-        number_of_BOs --;
-        saveData();
-    }
-
-    public void updateBO(int index, BO obj) {
-        if (index >= 0 && index < BOs.size()) {
-            BOs.set(index, obj);
-            saveData();
+    public void updateBO(int index, BO bo) {
+        if (index >= 0 && index < boList.length) {
+            boList[index] = bo;
+            //boList.set(index, bo);
+            saveBOs();
         }
     }
 
-    private void saveData() {
-        try {
-            Serialize_deserialize_BO.serialize(BOs, FILE_NAME);
+    public void removeBO(int index) {
+        if (index >= 0 && index < boList.length) {
+            boList[index] = null;
+            //boList.remove(index);
+            saveBOs();
+        }
+    }
+    public BO[] getBOs() {
+        return boList;
+    }
+    private void saveBOs() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(FILE_NAME))) {
+            oos.writeObject(boList);
+            System.out.println("saved successfully");
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("failed to save");
         }
     }
 
-    public List<BO> getBOs() {
-        return BOs;
+    private void loadBOs() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
+            boList = (BO[]) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("No existing data found or error loading data. Starting fresh.");
+        }
     }
+
     public void displayBOs() {
-        if (BOs.isEmpty()) {
-            System.out.println("No BOs available.");
-        } else {
-            for (BO bo : BOs) {
-                System.out.println(bo);
-            }
+        for (BO bo : boList) {
+            System.out.println(bo);
         }
     }
-
 }

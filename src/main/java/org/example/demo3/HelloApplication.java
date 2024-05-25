@@ -126,11 +126,11 @@ public class HelloApplication extends Application {
         //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
         //manage_bo2.addBO(bo1);
         //manage_bo2.addBO(bo2);
-        Manage_BO bo22 = new Manage_BO(10);
+        /*Manage_BO bo22 = new Manage_BO(10);
         bo22.addBO(bo1);
         bo22.addBO(bo2);
-        //bo22.loadBOs();
-        //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
+        bo22.loadBOs();
+        System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
         // #####################################################################################
         //##############  CREER PATIENT  ####################################################
         Patient patient = new Patient();
@@ -143,7 +143,7 @@ public class HelloApplication extends Application {
         doc.set_BO(bo22.getBOs());
         patient.setDossier(doc);
         Manage_patients manage_patient = new Manage_patients(10);
-        //manage_patient.removePatient(1);
+        manage_patient.removePatient(1);
         //
         manage_patient.addPatient(patient);
         manage_patient.displayPatients();
@@ -159,7 +159,8 @@ public class HelloApplication extends Application {
         orthophoniste.setNumero_telephone(055555555);
         Manage_doctor manage_doctor = new Manage_doctor(10);
         manage_doctor.addOrtho(orthophoniste);
-        manage_doctor.displayOrthos();
+        manage_doctor.displayOrthos();*/
+
         launch();
     }
 }

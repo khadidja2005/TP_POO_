@@ -12,7 +12,6 @@ public class Patient implements Serializable{
     private Dossier dossier;
 
     //constructors
-
     public Patient(String nom, String prenom, String adresse, String date_de_naissance, String lieu_de_naissance, Dossier dossier) {
         this.nom = nom;
         this.prenom = prenom;
@@ -71,7 +70,7 @@ public class Patient implements Serializable{
                 "adresse :"+ adresse +
                 "date_de_naissance" + date_de_naissance +
                 "lieu_de_naissance" + lieu_de_naissance +
-                "Dossier" + dossier.toString() +
+                "Dossier" + (dossier != null ? dossier.toString() : null) +
                 "}" ;
 
     }

@@ -25,7 +25,7 @@ public class Dossier implements Serializable {
     }
 
     // Setter and getter for numero
-    public static int getNumero() {
+    public int getNumero() {
         return numero;
     }
 

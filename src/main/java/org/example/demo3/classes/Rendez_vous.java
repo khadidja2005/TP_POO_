@@ -8,10 +8,10 @@ public class Rendez_vous implements Serializable {
    private String duree;
    private String observation;
    private String date;
-   private int heure;
+   private String heure;
 
 
-    public Rendez_vous(boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Rendez_vous(boolean premiere_visite, String duree, String observation, String date, String heure) {
         this.premiere_visite = premiere_visite;
         this.duree = duree;
         this.observation = observation;
@@ -55,11 +55,11 @@ public class Rendez_vous implements Serializable {
     }
 
     // Getters and setters for heure
-    public int getHeure() {
+    public String getHeure() {
         return heure;
     }
 
-    public void setHeure(int heure) {
+    public void setHeure(String heure) {
         this.heure = heure;
     }
 

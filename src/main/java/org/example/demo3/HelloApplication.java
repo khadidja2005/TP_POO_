@@ -147,16 +147,16 @@ public class HelloApplication extends Application {
         //
         manage_patient.addPatient(patient);
         manage_patient.displayPatients();
-        //manage_bo2.displayBOs();
+        //manage_bo2.displayBOs();*/
         // ########################################################################################
         // #################  CREER ORTHOPHONISTE  ################################################
-        Orthophoniste orthophoniste = new Orthophoniste();
-        orthophoniste.setAdresse("Oued Smar Alger");
-        orthophoniste.setAdresse_email("mk_brakta@esi.dz");
-        orthophoniste.setMot_de_passe("123456");
-        orthophoniste.setNom("Brakta");
-        orthophoniste.setPrenom("Khadidja");
-        orthophoniste.setNumero_telephone(055555555);
+      /*  Orthophoniste orthophoniste = new Orthophoniste();
+        orthophoniste.setAdresse("New York");
+        orthophoniste.setAdresse_email("marchelle21@esi.dz");
+        orthophoniste.setMot_de_passe("march21");
+        orthophoniste.setNom("Jo");
+        orthophoniste.setPrenom("Marchelle");
+        orthophoniste.setNumero_telephone("0665132395");
         Manage_doctor manage_doctor = new Manage_doctor(10);
         manage_doctor.addOrtho(orthophoniste);
         manage_doctor.displayOrthos();*/

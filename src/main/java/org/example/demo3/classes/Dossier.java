@@ -6,10 +6,9 @@ import java.util.Arrays;
 public class Dossier implements Serializable {
     private static int numero = 1;
 
-    private BO[] BO=new BO[10];
-    private Rendez_vous[] rendez_vous=new Rendez_vous[25];
-    private Fichier_de_suivi[] fichier_de_suivi=new Fichier_de_suivi[25];
-
+    private BO[] BO = new BO[10];
+    private Rendez_vous[] rendez_vous = new Rendez_vous[25];
+    private Fichier_de_suivi[] fichier_de_suivi = new Fichier_de_suivi[25];
 
     // Default constructor
     public Dossier() {
@@ -48,7 +47,7 @@ public class Dossier implements Serializable {
     }
 
     public void set_rendez_vous(Rendez_vous[] _rendez_vous) {
-        this.rendez_vous = rendez_vous;
+        this.rendez_vous = _rendez_vous;
     }
 
     // Setter and getter for _fichier_de_suivi
@@ -57,17 +56,48 @@ public class Dossier implements Serializable {
     }
 
     public void set_fichier_de_suivi(Fichier_de_suivi[] _fichier_de_suivi) {
-        this.fichier_de_suivi = fichier_de_suivi;
+        this.fichier_de_suivi = _fichier_de_suivi;
     }
+
+    // Method to add a BO
+    public void addBO(BO newBO) {
+        for (int i = 0; i < BO.length; i++) {
+            if (BO[i] == null) {
+                BO[i] = newBO;
+                return;
+            }
+        }
+        System.out.println("No space left to add new BO");
+    }
+
+    // Method to add a Rendez_vous
+    public void addRendezVous(Rendez_vous newRendezVous) {
+        for (int i = 0; i < rendez_vous.length; i++) {
+            if (rendez_vous[i] == null) {
+                rendez_vous[i] = newRendezVous;
+                return;
+            }
+        }
+        System.out.println("No space left to add new Rendez_vous");
+    }
+
+    // Method to add a Fichier_de_suivi
+    public void addFichierDeSuivi(Fichier_de_suivi newFichierDeSuivi) {
+        for (int i = 0; i < fichier_de_suivi.length; i++) {
+            if (fichier_de_suivi[i] == null) {
+                fichier_de_suivi[i] = newFichierDeSuivi;
+                return;
+            }
+        }
+        System.out.println("No space left to add new Fichier_de_suivi");
+    }
+
     @Override
     public String toString() {
         return "Dossier{" +
                 "BO=" + Arrays.toString(BO) +
-                ", rendez_vous: " + Arrays.toString(rendez_vous)+
-                ", fichier_de_suivi: " + Arrays.toString(fichier_de_suivi) +
+                ", rendez_vous=" + Arrays.toString(rendez_vous) +
+                ", fichier_de_suivi=" + Arrays.toString(fichier_de_suivi) +
                 '}';
     }
-
-
-
 }

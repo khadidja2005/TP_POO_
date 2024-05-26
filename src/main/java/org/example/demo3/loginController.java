@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.example.demo3.classes.Manage_doctor;
+
 import java.io.IOException;
 
 public class loginController {
@@ -17,9 +19,9 @@ public class loginController {
     private PasswordField txtpassword;
     @FXML
     private Label lblError;
-
-    private static final String EMAIL = "marchelle21@gmail.com";
-    private static final String PASSWORD = "march21";
+    private static Manage_doctor md = new Manage_doctor(10);
+    private static String EMAIL = md.getOrthophoniste(0).getAdresse_email();
+    private static String PASSWORD = md.getOrthophoniste(0).getMot_de_passe();
 
     @FXML
     private void switchTohomePage(ActionEvent e) {

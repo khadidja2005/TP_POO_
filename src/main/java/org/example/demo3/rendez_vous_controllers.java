@@ -67,6 +67,25 @@ public class rendez_vous_controllers {
         }
     }
 
+    @FXML
+    public void OnclickParametre(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("parametres.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
+
+    @FXML
+    public void OnclickgestionInfo(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("gestion_info.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
 
 }
 

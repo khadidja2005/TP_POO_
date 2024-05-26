@@ -6,12 +6,12 @@ public class Consultation extends Rendez_vous {
     private int age;
 
     // Default constructor
-    public Consultation(boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Consultation(boolean premiere_visite, String duree, String observation, String date, String heure) {
         super(premiere_visite,duree,observation,date,heure); // Call the superclass constructor
     }
 
     // Constructor with parameters
-    public Consultation(String nom, String prenom, int age, boolean premiere_visite, String duree, String observation, String date, int heure) {
+    public Consultation(String nom, String prenom, int age, boolean premiere_visite, String duree, String observation, String date, String heure) {
         super(premiere_visite,duree,observation,date,heure); // Call the superclass constructor
         this.nom = nom;
         this.prenom = prenom;

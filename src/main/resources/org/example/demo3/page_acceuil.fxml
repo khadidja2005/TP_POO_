@@ -54,7 +54,7 @@
                <children>
                   <HBox alignment="TOP_CENTER" prefHeight="55.0" prefWidth="301.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="245.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Paramètres" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#OnclickParametre" prefHeight="55.0" prefWidth="245.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Paramètres" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>

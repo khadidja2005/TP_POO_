@@ -1,30 +1,75 @@
 package org.example.demo3;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import org.example.demo3.classes.Dossier;
-import org.example.demo3.classes.Manage_patients;
-import org.example.demo3.classes.Patient;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.DatePicker;
+import org.example.demo3.classes.*;
 
 import java.io.IOException;
 
 public class PatientController {
+
     @FXML
-    private TextField Nom_patient ;
+    private TextField Nom_patient;
+    @FXML
+    private TextArea Observation_consultation;
     @FXML
     private TextField Prenom_patient;
     @FXML
-    private TextField adresse ;
+    private TextField adresse;
     @FXML
-    private TextField Date_naissance ;
+    private TextField Date_naissance;
     @FXML
-    private TextField lieu_naissance ;
+    private TextField lieu_naissance;
 
+    @FXML
+    private DatePicker Agenda;
+
+    @FXML
+    private TextField Heure;
+
+    @FXML
+    private MenuButton typeSeanceMenuButton;
+
+    @FXML
+    private TextField patientNumero;
+
+    @FXML
+    private TextField Observation;
+
+    @FXML
+    private TextField thematique;
+
+    @FXML
+    private TextField patient1;
+
+    @FXML
+    private TextField patient2;
+
+    @FXML
+    private TextField patient3;
+
+    @FXML
+    private TextField patient4;
+
+    @FXML
+    private TextField patient5;
+
+    @FXML
+    private TextField patient6;
+
+    @FXML
+    private TextField AgePatient;
+
+    @FXML
+    private Label lblError;
 
     @FXML
     private Button retour;
@@ -43,8 +88,16 @@ public class PatientController {
 
     @FXML
     private Button afficher_rend;
+
     @FXML
     private Label successMessageLabel;
+
+    @FXML
+    void handleSessionTypeSelection(ActionEvent event) {
+        MenuItem menuItem = (MenuItem) event.getSource();
+        String selectedSessionType = menuItem.getText();
+        typeSeanceMenuButton.setText(selectedSessionType);
+    }
 
     @FXML
     public void switchTolistePatients(ActionEvent e) {
@@ -67,19 +120,17 @@ public class PatientController {
     }
 
     @FXML
-    public void OnclickCreerRendezVous ( ActionEvent e) {
+    public void OnclickCreerRendezVous(ActionEvent e) {
         try {
             HelloApplication.loadPage("Type_de_rendez_vous.fxml");
-
-        }catch (IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
-
     }
 
     @FXML
-    public void onclickconsultation (ActionEvent e) {
+    public void onclickconsultation(ActionEvent e) {
         try {
             HelloApplication.loadPage("prise_rendez_vous.fxml");
         } catch (Exception ex) {
@@ -87,22 +138,22 @@ public class PatientController {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+
     @FXML
-    public void OnclickSuivi ( ActionEvent e) {
+    public void OnclickSuivi(ActionEvent e) {
         try {
             HelloApplication.loadPage("Creer_Suivi.fxml");
-
-        } catch (IOException ex){
+        } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
-
     }
+
     @FXML
-    public   void OnClickAtelier (ActionEvent e) {
+    public void OnClickAtelier(ActionEvent e) {
         try {
             HelloApplication.loadPage("Creer_Atelier.fxml");
-        }catch ( IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
@@ -127,17 +178,18 @@ public class PatientController {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+
     @FXML
-    public void ajouterpatient (ActionEvent e) {
+    public void ajouterpatient(ActionEvent e) {
         try {
-        String nom = Nom_patient.getText();
-        String prenom = Prenom_patient.getText();
-        String adress = adresse.getText();
-        String date_naissance = Date_naissance.getText();
-        String lieu_naissanc = lieu_naissance.getText();
-        Manage_patients mp = new Manage_patients(10);
-        //mp.displayPatients();
-        mp.loadPatients();
+            String nom = Nom_patient.getText();
+            String prenom = Prenom_patient.getText();
+            String adress = adresse.getText();
+            String date_naissance = Date_naissance.getText();
+            String lieu_naissanc = lieu_naissance.getText();
+            Manage_patients mp = new Manage_patients(10);
+            mp.loadPatients();
+
             Patient patient = new Patient();
             patient.setAdresse(adress);
             patient.setDate_de_naissance(date_naissance);
@@ -148,17 +200,179 @@ public class PatientController {
             patient.setDossier(doc);
             mp.addPatient(patient);
             mp.displayPatients();
+
             successMessageLabel.setText("Patient ajouté avec succès");
             successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
             successMessageLabel.setText("Erreur lors de l'ajout du patient");
             successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
-
         }
+    }
 
+    @FXML
+    void ajoutersuivi(ActionEvent e) {
+        try {
+            int patientText = Integer.parseInt(patientNumero.getText());
+
+            Manage_patients mp = new Manage_patients(10);
+            mp.loadPatients();
+            mp.displayPatients();
+            boolean patientFound = false;
+            int patientIndex = -1;
+
+            System.out.println("Numéro de dossier du premier patient : " + mp.getPatients()[0].getDosssier().getNumero());
+
+            for (int i = 0; i < mp.getPatients().length; i++) {
+                if (mp.getPatients()[i] != null && mp.getPatients()[i].getDosssier().getNumero() == patientText) {
+                    patientFound = true;
+                    patientIndex = i;
+                    break;
+                }
+            }
+
+            if (!patientFound) {
+                successMessageLabel.setText("Le numéro de dossier: " + patientText + " n'existe pas");
+                successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
+                return;
+            }
+
+            String date = Agenda.getValue().toString();
+            String heure = Heure.getText();
+            String observation = Observation.getText();
+            String sessionType = typeSeanceMenuButton.getText();
+
+            Suivie newSuivi = new Suivie(sessionType, patientText, false, "1h", observation, date, heure);
+
+            Dossier doc = mp.getPatients()[patientIndex].getDosssier();
+            doc.addRendezVous(newSuivi);
+
+            successMessageLabel.setText("Rendez-vous ajouté avec succès");
+            successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+            successMessageLabel.setText("Erreur lors de l'ajout du rendez-vous");
+            successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
+        }
+    }
+
+    public void ajouteratelier(ActionEvent e) {
+        try {
+            int[] patientNumbers = {
+                    Integer.parseInt(patient1.getText()),
+                    Integer.parseInt(patient2.getText()),
+                    Integer.parseInt(patient3.getText()),
+                    Integer.parseInt(patient4.getText()),
+                    Integer.parseInt(patient5.getText()),
+                    Integer.parseInt(patient6.getText())
+            };
+
+            Manage_patients mp = new Manage_patients(10);
+            mp.loadPatients(); // Assuming this method loads the patients into the array
+
+            String date = Agenda.getValue().toString();
+            String heure = Heure.getText();
+            String thematiqueText = thematique.getText();
+            String observation = Observation.getText();
+            Atelier newAtelier = new Atelier(thematiqueText, false, "1h", observation, date, heure);
+
+            // Validate all patient numbers and get their indexes
+            int[] patientIndexes = new int[patientNumbers.length];
+            boolean allPatientsFound = true;
+
+            for (int i = 0; i < patientNumbers.length; i++) {
+                boolean patientFound = false;
+                for (int j = 0; j < mp.getPatients().length; j++) {
+                    if (mp.getPatients()[j] != null && mp.getPatients()[j].getDosssier().getNumero() == patientNumbers[i]) {
+                        patientFound = true;
+                        patientIndexes[i] = j;
+                        break;
+                    }
+                }
+                if (!patientFound) {
+                    lblError.setText("Le numéro de dossier: " + patientNumbers[i] + " n'existe pas");
+                    lblError.setTextFill(javafx.scene.paint.Color.RED);
+                    allPatientsFound = false;
+                    break; // Stop checking further if one patient is not found
+                }
+            }
+
+            // If all patients are found, add the Atelier to their dossiers
+            if (allPatientsFound) {
+                for (int index : patientIndexes) {
+                    Dossier dossier = mp.getPatients()[index].getDosssier();
+                    dossier.addRendezVous(newAtelier);
+                }
+                successMessageLabel.setText("Atelier ajouté avec succès à tous les patients");
+                successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+            successMessageLabel.setText("Erreur lors de l'ajout de l'atelier");
+            successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
+        }
+    }
+
+
+
+    @FXML
+    void ajouterconsultation(ActionEvent e) {
+        try {
+            Manage_patients mp = new Manage_patients(10);
+            mp.loadPatients();
+            mp.displayPatients();
+
+            String date = Agenda.getValue().toString();
+            String heure = Heure.getText();
+            String observation = Observation_consultation.getText();
+            String nom = Nom_patient.getText();
+            String prenom = Prenom_patient.getText();
+            int age = Integer.parseInt(AgePatient.getText());
+
+            System.out.println("Numéro de dossier du premier patient : " + mp.getPatients()[0].getDosssier().getNumero());
+
+            // Find the patient by name and surname
+            boolean patientFound = false;
+            int patientIndex = -1;
+
+            for (int i = 0; i < mp.getPatients().length; i++) {
+                if (mp.getPatients()[i] != null && mp.getPatients()[i].getNom().equals(nom) && mp.getPatients()[i].getPrenom().equals(prenom)) {
+                    patientFound = true;
+                    patientIndex = i;
+                    break;
+                }
+            }
+
+            // If the patient is not found, show an error message
+            if (!patientFound) {
+                successMessageLabel.setText("Le patient " + nom + " " + prenom + " n'existe pas");
+                successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
+                return;
+            }
+
+            // Create a new consultation
+            Consultation newConsultation = new Consultation(nom, prenom, age, true, "1h", observation, date, heure);
+
+            // Add the consultation to the patient's dossier
+            Dossier doc = mp.getPatients()[patientIndex].getDosssier();
+            doc.addRendezVous(newConsultation);
+
+            // Show success message
+            successMessageLabel.setText("Rendez-vous ajouté avec succès");
+            successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+            successMessageLabel.setText("Erreur lors de l'ajout du rendez-vous");
+            successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
+        }
     }
 
 }

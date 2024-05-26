@@ -7,11 +7,11 @@ public class Orthophoniste implements Serializable {
     private String nom;
     private String prenom;
     private String adresse;
-    private int numero_telephone;
+    private String numero_telephone;
     private String adresse_email;
     private String mot_de_passe;
 
-    public Orthophoniste(String nom, String prenom, String adresse_email, String adresse, int numero_telephone, String mot_de_passe) {
+    public Orthophoniste(String nom, String prenom, String adresse_email, String adresse, String numero_telephone, String mot_de_passe) {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -42,10 +42,10 @@ public class Orthophoniste implements Serializable {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-    public int getNumero_telephone() {
+    public String getNumero_telephone() {
         return numero_telephone;
     }
-    public void setNumero_telephone(int numero_telephone) {
+    public void setNumero_telephone(String numero_telephone) {
         this.numero_telephone = numero_telephone;
     }
     public String getAdresse_email() {

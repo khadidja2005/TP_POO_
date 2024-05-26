@@ -2,6 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
@@ -33,7 +35,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox prefHeight="105.0" prefWidth="600.0">
+      <HBox prefHeight="90.0" prefWidth="600.0">
          <children>
             <VBox alignment="CENTER" prefHeight="39.0" prefWidth="138.0">
                <children>
@@ -44,37 +46,83 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="39.0" prefWidth="417.0">
+            <VBox alignment="CENTER" prefHeight="90.0" prefWidth="198.0">
                <children>
-                  <TextField />
+                  <TextField fx:id="patientNumero" prefHeight="25.0" prefWidth="185.0" />
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="254.0">
+               <children>
+                  <MenuButton mnemonicParsing="false" prefHeight="30.0" prefWidth="172.0" text="type de sceance">
+                       <items>
+                          <MenuItem onAction="#handleSessionTypeSelection" text="en ligne" />
+                          <MenuItem onAction="#handleSessionTypeSelection" text="presentielle" />
+                       </items>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </MenuButton>
+               </children>
+            </HBox>
          </children>
       </HBox>
-      <VBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="600.0">
+      <HBox alignment="CENTER" prefHeight="135.0" prefWidth="600.0">
          <children>
-            <MenuButton mnemonicParsing="false" prefHeight="29.0" prefWidth="150.0" text="type de sceance">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Presentiel" />
-                <MenuItem mnemonicParsing="false" text="enligne" />
-              </items>
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </MenuButton>
+            <HBox alignment="CENTER_RIGHT" prefHeight="135.0" prefWidth="304.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="150.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Heure" wrappingWidth="38.3720703125">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="Heure" prefHeight="25.0" prefWidth="261.0" />
+               </children>
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+            <DatePicker fx:id="Agenda" promptText="Date" />
          </children>
-         <padding>
-            <Insets bottom="30.0" left="20.0" right="20.0" top="10.0" />
-         </padding>
+      </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="600.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="88.0" prefWidth="515.0">
+               <children>
+                  <HBox prefHeight="82.0" prefWidth="290.0">
+                     <children>
+                        <HBox prefHeight="82.0" prefWidth="278.0">
+                           <children>
+                              <HBox prefHeight="82.0" prefWidth="135.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Observation" wrappingWidth="86.3720703125">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <TextField fx:id="Observation" prefHeight="82.0" prefWidth="230.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="82.0" prefWidth="44.0" />
+                  <Button mnemonicParsing="false" onAction="#ajoutersuivi" prefHeight="30.0" prefWidth="144.0" style="-fx-background-color: #3191ff;" text="Sauvegarder" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label fx:id="successMessageLabel" prefHeight="48.0" prefWidth="449.0" />
+         </children>
       </VBox>
-      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="600.0">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #3191ff;" text="Sauvegarder" textFill="WHITE">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
    </children>
 </VBox>

@@ -1,8 +1,24 @@
 package org.example.demo3;
 
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+import javafx.util.Callback;
+import org.example.demo3.classes.Manage_patients;
+import org.example.demo3.classes.Patient;
+
 import java.io.IOException;
 
 public class rendez_vous_controllers {
@@ -19,11 +35,12 @@ public class rendez_vous_controllers {
     private Button AjouterPas;
 
     @FXML
+    private ListView<Patient> listView;
 
+    @FXML
     public void initialize() {
         System.out.println("Rendez-vous controller initialized");
     }
-
 
     @FXML
     public void HandelRetourAction2(ActionEvent e) {
@@ -34,15 +51,88 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
-
-
-
-
     @FXML
-    public void switchTolistePatients(ActionEvent e) {
+    public void switchTolistePatients(ActionEvent e) throws IOException {
         try {
-            HelloApplication.loadPage("liste_patients.fxml");
-        } catch (IOException ex) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("liste_patients.fxml"));
+            Parent root = loader.load();
+
+            // Get the controller for the loaded FXML
+            rendez_vous_controllers controller = loader.getController();
+
+            // Load the patients
+            Manage_patients MP = new Manage_patients(2);
+            MP.loadPatients();
+            System.out.println("Patients:############################################# ");
+            MP.displayPatients();
+
+            // Convert array to ObservableList
+            ObservableList<Patient> patients = FXCollections.observableArrayList(MP.getPatients());
+            System.out.println("ObservableList contents: " + patients);
+
+            // Ensure the ListView is updated in the loaded controller
+            if (controller.listView != null) {
+                controller.listView.setItems(patients);
+                System.out.println("ListView contents: " + controller.listView.getItems());
+                controller.listView.setCellFactory(new Callback<>() {
+                    @Override
+                    public ListCell<Patient> call(ListView<Patient> listView) {
+                        return new ListCell<Patient>() {
+                            @Override
+                            protected void updateItem(Patient item, boolean empty) {
+                                super.updateItem(item, empty);
+                                System.out.println("item: " + item);
+                                if (item != null && !empty) {
+                                    HBox hBox = new HBox(20);
+                                    hBox.setPrefHeight(50);
+                                    hBox.setAlignment(Pos.CENTER_LEFT);
+
+                                    Label name = new Label("Patient" + (getIndex() + 1));
+                                    Label nom = new Label(item.getNom());
+                                    Label prenom = new Label(item.getPrenom());
+
+                                    name.setPrefWidth(70);
+                                    nom.setPrefWidth(150);
+                                    prenom.setPrefWidth(150);
+
+                                    Button supprimerButton = new Button("Supprimer");
+                                    Button sauvButton = new Button("Sauvegarder");
+
+                                    supprimerButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+                                    sauvButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+
+                                    supprimerButton.setOnAction(event -> {
+                                        getListView().getItems().remove(item);
+                                    });
+
+                                    setOnMouseEntered(event -> setStyle("-fx-background-color: #e6e7e5;"));
+                                    setOnMouseExited(event -> setStyle("-fx-background-color: white;"));
+
+                                    HBox buttonsBox = new HBox(20);
+                                    buttonsBox.getChildren().addAll(supprimerButton, sauvButton);
+                                    buttonsBox.setAlignment(Pos.CENTER_LEFT);
+
+                                    hBox.getChildren().addAll(name, nom, prenom, buttonsBox);
+                                    setGraphic(hBox);
+                                } else {
+                                    setGraphic(null);
+                                    System.out.println("item is null");
+                                }
+                            }
+                        };
+                    }
+                });
+                controller.listView.refresh();
+            } else {
+                System.out.println("ListView is null in the loaded controller");
+            }
+
+            // Set the new scene
+            Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
@@ -57,6 +147,7 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+
     @FXML
     public void switchToAjouterPatients(ActionEvent e) {
         try {
@@ -66,7 +157,6 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
-
     @FXML
     public void OnclickParametre(ActionEvent e) {
         try {
@@ -86,6 +176,4 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
-
 }
-

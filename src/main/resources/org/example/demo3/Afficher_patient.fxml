@@ -45,7 +45,7 @@
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:" wrappingWidth="97.9453125" />
                            </children>
                         </HBox>
-                        <TextField prefHeight="33.0" prefWidth="132.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Brakta">
+                        <TextField fx:id="nom_pat" prefHeight="33.0" prefWidth="132.0" promptText="Brakta" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font>
@@ -59,7 +59,7 @@
                               <Text layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom :" />
                               <HBox alignment="CENTER" layoutX="89.0" layoutY="-3.0" prefHeight="59.0" prefWidth="164.0">
                                  <children>
-                                    <TextField prefHeight="34.0" prefWidth="144.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Khadidja">
+                                    <TextField fx:id="prenom_pat" prefHeight="34.0" prefWidth="144.0" promptText="Khadidja" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;">
                                        <font>
                                           <Font name="Arial Bold" size="12.0" />
                                        </font>
@@ -78,7 +78,7 @@
          <children>
             <Pane prefHeight="63.0" prefWidth="600.0">
                <children>
-                  <HBox alignment="CENTER" layoutX="-68.0" layoutY="-6.0" prefHeight="70.0" prefWidth="720.0">
+                  <HBox alignment="CENTER" layoutX="-68.0" layoutY="-6.0" prefHeight="79.0" prefWidth="720.0">
                      <children>
                         <HBox alignment="CENTER" prefHeight="59.0" prefWidth="107.0">
                            <children>
@@ -88,7 +88,7 @@
                               <Insets />
                            </opaqueInsets>
                         </HBox>
-                        <TextField prefHeight="33.0" prefWidth="436.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Algeria, Mila">
+                        <TextField fx:id="adress_pat" prefHeight="33.0" prefWidth="436.0" promptText="Algeria, algiers" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;">
                            <font>
                               <Font name="Arial Bold" size="12.0" />
                            </font>
@@ -112,46 +112,44 @@
                         <Insets />
                      </opaqueInsets>
                   </HBox>
-                  <TextField prefHeight="40.0" prefWidth="436.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="02/02/2005">
+                  <TextField fx:id="dat_naiss" prefHeight="40.0" prefWidth="436.0" promptText="02/02/2005" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;">
                      <font>
                         <Font name="Arial Bold" size="12.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <HBox layoutX="-2.0" layoutY="44.0" prefHeight="40.0" prefWidth="606.0">
+            <HBox layoutX="-2.0" layoutY="64.0" prefHeight="70.0" prefWidth="606.0">
                <children>
-                  <Pane prefHeight="63.0" prefWidth="600.0">
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="587.0">
                      <children>
-                        <HBox alignment="CENTER" layoutX="-68.0" layoutY="30.0" prefHeight="36.0" prefWidth="720.0">
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="107.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="59.0" prefWidth="107.0">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="lieu de naissance :" wrappingWidth="102.966796875" />
-                                    <VBox prefHeight="200.0" prefWidth="100.0" />
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </HBox>
-                              <TextField prefHeight="0.0" prefWidth="436.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;" text="Algeria, Mila">
-                                 <font>
-                                    <Font name="Arial Bold" size="12.0" />
-                                 </font>
-                              </TextField>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="lieu de naissance :" wrappingWidth="100.96679675579071" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" />
                            </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </HBox>
-                        <HBox layoutX="-2.0" layoutY="44.0" prefHeight="40.0" prefWidth="606.0" />
+                        <TextField fx:id="lieu_naiss" prefHeight="39.0" prefWidth="436.0" promptText="Algeria, algiers" style="-fx-background-color: #FFFFFF; -fx-border-color: #3191ff; -fx-border-width: 2px;">
+                           <font>
+                              <Font name="Arial Bold" size="12.0" />
+                           </font>
+                        </TextField>
                      </children>
-                  </Pane>
+                  </HBox>
+                  <Pane prefHeight="70.0" prefWidth="16.0" />
                </children>
             </HBox>
          </children>
       </Pane>
-      <VBox prefHeight="43.0" prefWidth="594.0" />
-      <HBox prefHeight="74.0" prefWidth="558.0">
+      <HBox alignment="CENTER" prefHeight="61.0" prefWidth="594.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="74.0" prefWidth="311.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="107.0" prefWidth="265.0">
                <children>
                   <Button fx:id="creer_rend" mnemonicParsing="false" onAction="#OnclickCreerRendezVous" prefHeight="40.0" prefWidth="251.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Ajouter un redez_vous" textFill="WHITE">
                      <font>
@@ -166,7 +164,7 @@
                   <Insets left="30.0" />
                </HBox.margin>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="346.0">
+            <HBox alignment="CENTER_LEFT" prefHeight="143.0" prefWidth="327.0">
                <children>
                   <Button fx:id="afficher_rend" mnemonicParsing="false" onAction="#switchToAfficherRendezVous" prefHeight="40.0" prefWidth="262.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="affichier liste des rendez_vous" textFill="WHITE">
                      <font>
@@ -177,8 +175,14 @@
                      </HBox.margin>
                   </Button>
                </children>
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
             </HBox>
          </children>
+         <VBox.margin>
+            <Insets top="60.0" />
+         </VBox.margin>
       </HBox>
    </children>
 </VBox>

@@ -9,10 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -24,7 +21,7 @@ import java.io.IOException;
 public class rendez_vous_controllers {
     @FXML
     private Button retour;
-
+    public static Patient item_pat ;
     @FXML
     private Button gererPatients;
 
@@ -53,6 +50,7 @@ public class rendez_vous_controllers {
     }
     @FXML
     public void switchTolistePatients(ActionEvent e) throws IOException {
+        PatientController PC = new PatientController();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("liste_patients.fxml"));
             Parent root = loader.load();
@@ -95,21 +93,29 @@ public class rendez_vous_controllers {
                                     nom.setPrefWidth(150);
                                     prenom.setPrefWidth(150);
 
-                                    Button supprimerButton = new Button("Supprimer");
-                                    Button sauvButton = new Button("Sauvegarder");
+                                    Button afficherButton = new Button("Afficher patient");
 
-                                    supprimerButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
-                                    sauvButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+                                    afficherButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
 
-                                    supprimerButton.setOnAction(event -> {
-                                        getListView().getItems().remove(item);
+                                    afficherButton.setOnAction(event -> {
+
+                                        System.out.println("Afficher patient: " + item);
+
+                                        item_pat = item;
+                                        //PC.afficherinfo_patient();
+                                        try {
+                                            HelloApplication.loadPage("Afficher_patient.fxml");
+                                        } catch (IOException ex) {
+                                            throw new RuntimeException(ex);
+                                        }
+                                        //PC.afficherinfo_patient(item);
                                     });
 
                                     setOnMouseEntered(event -> setStyle("-fx-background-color: #e6e7e5;"));
                                     setOnMouseExited(event -> setStyle("-fx-background-color: white;"));
 
                                     HBox buttonsBox = new HBox(20);
-                                    buttonsBox.getChildren().addAll(supprimerButton, sauvButton);
+                                    buttonsBox.getChildren().addAll(afficherButton);
                                     buttonsBox.setAlignment(Pos.CENTER_LEFT);
 
                                     hBox.getChildren().addAll(name, nom, prenom, buttonsBox);

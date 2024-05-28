@@ -7,10 +7,10 @@ import java.util.Arrays;
 public class Dossier implements Serializable {
     private static int numero = 1;
 
-    private BO[] BO = new BO[10];
+    private ArrayList<BO> BO = new ArrayList<BO>(20);
     private ArrayList<Rendez_vous> rendez_vous = new ArrayList<Rendez_vous>() ;
     //private Rendez_vous[] rendez_vous = new Rendez_vous[25];
-    private Fichier_de_suivi[] fichier_de_suivi = new Fichier_de_suivi[25];
+    private ArrayList<Fichier_de_suivi> fichier_de_suivi = new ArrayList<Fichier_de_suivi>(10);
 
     // Default constructor
     public Dossier() {
@@ -18,7 +18,7 @@ public class Dossier implements Serializable {
     }
 
     // Constructor with parameters
-    public Dossier(BO[] BO, ArrayList<Rendez_vous> rendez_vous, Fichier_de_suivi[] fichier_de_suivi) {
+    public Dossier(ArrayList<BO> BO, ArrayList<Rendez_vous> rendez_vous, ArrayList<Fichier_de_suivi> fichier_de_suivi) {
         this.BO = BO;
         this.rendez_vous = rendez_vous;
         this.fichier_de_suivi = fichier_de_suivi;
@@ -35,11 +35,11 @@ public class Dossier implements Serializable {
     }
 
     // Setter and getter for _BO
-    public BO[] get_BO() {
+    public ArrayList<BO> get_BO() {
         return BO;
     }
 
-    public void set_BO(BO[] BO) {
+    public void set_BO(ArrayList<BO> BO) {
         this.BO = BO;
     }
 
@@ -53,23 +53,17 @@ public class Dossier implements Serializable {
     }
 
     // Setter and getter for _fichier_de_suivi
-    public Fichier_de_suivi[] get_fichier_de_suivi() {
+    public ArrayList<Fichier_de_suivi> get_fichier_de_suivi() {
         return fichier_de_suivi;
     }
 
-    public void set_fichier_de_suivi(Fichier_de_suivi[] _fichier_de_suivi) {
+    public void set_fichier_de_suivi(ArrayList<Fichier_de_suivi> _fichier_de_suivi) {
         this.fichier_de_suivi = _fichier_de_suivi;
     }
 
     // Method to add a BO
     public void addBO(BO newBO) {
-        for (int i = 0; i < BO.length; i++) {
-            if (BO[i] == null) {
-                BO[i] = newBO;
-                return;
-            }
-        }
-        System.out.println("No space left to add new BO");
+        BO.add(newBO);
     }
 
     // Method to add a Rendez_vous
@@ -78,9 +72,9 @@ public class Dossier implements Serializable {
     }
     // Method to add a Fichier_de_suivi
     public void addFichierDeSuivi(Fichier_de_suivi newFichierDeSuivi) {
-        for (int i = 0; i < fichier_de_suivi.length; i++) {
-            if (fichier_de_suivi[i] == null) {
-                fichier_de_suivi[i] = newFichierDeSuivi;
+        for (int i = 0; i < fichier_de_suivi.size(); i++) {
+            if (fichier_de_suivi.get(i) == null) {
+                fichier_de_suivi.set(i , newFichierDeSuivi);
                 return;
             }
         }
@@ -90,9 +84,9 @@ public class Dossier implements Serializable {
     @Override
     public String toString() {
         return "Dossier{" +
-                "BO=" + Arrays.toString(BO) +
+                "BO=" + BO +
                 ", rendez_vous=" + rendez_vous +
-                ", fichier_de_suivi=" + Arrays.toString(fichier_de_suivi) +
+                ", fichier_de_suivi=" + fichier_de_suivi +
                 '}';
     }
 }

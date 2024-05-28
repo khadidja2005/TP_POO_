@@ -105,7 +105,7 @@ public class HelloApplication extends Application {
         Trouble trouble3 = new Trouble("trouble3" , Categorie_trouble.trouble_neuro_developpementaux);
         Trouble trouble4 = new Trouble("trouble4" , Categorie_trouble.trouble_cognitifs);
         bo2.setTrouble(new Trouble[]{trouble3 , trouble4});
-        //Manage_BO manageBo = new Manage_BO();
+        //Manage_BO manageBo = new Manage_BO(2);
         //manageBo.addBO(bo1);
         //manageBo.addBO(bo2);
         //manageBo.displayBOs();
@@ -126,11 +126,11 @@ public class HelloApplication extends Application {
         //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
         //manage_bo2.addBO(bo1);
         //manage_bo2.addBO(bo2);
-        /*Manage_BO bo22 = new Manage_BO(10);
+        Manage_BO bo22 = new Manage_BO(10);
         bo22.addBO(bo1);
         bo22.addBO(bo2);
         bo22.loadBOs();
-        System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
+        //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
         // #####################################################################################
         //##############  CREER PATIENT  ####################################################
         Patient patient = new Patient();
@@ -147,10 +147,10 @@ public class HelloApplication extends Application {
         //
         manage_patient.addPatient(patient);
         manage_patient.displayPatients();
-        //manage_bo2.displayBOs();*/
+        //manage_bo2.displayBOs();
         // ########################################################################################
         // #################  CREER ORTHOPHONISTE  ################################################
-      /*  Orthophoniste orthophoniste = new Orthophoniste();
+        Orthophoniste orthophoniste = new Orthophoniste();
         orthophoniste.setAdresse("New York");
         orthophoniste.setAdresse_email("marchelle21@esi.dz");
         orthophoniste.setMot_de_passe("march21");
@@ -159,7 +159,7 @@ public class HelloApplication extends Application {
         orthophoniste.setNumero_telephone("0665132395");
         Manage_doctor manage_doctor = new Manage_doctor(10);
         manage_doctor.addOrtho(orthophoniste);
-        manage_doctor.displayOrthos();*/
+        manage_doctor.displayOrthos();
 
         launch();
     }

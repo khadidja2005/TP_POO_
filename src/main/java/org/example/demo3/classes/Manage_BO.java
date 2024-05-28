@@ -6,49 +6,39 @@ import java.util.List;
 
 public class Manage_BO implements Serializable {
     private static final String FILE_NAME = "src/main/resources/DATA/bo.txt";
-    private BO[] boList;
+    private ArrayList<BO> boList;
 
     public Manage_BO(int length) {
-        boList = new BO[length];
+        boList = new ArrayList<BO>(length);
         loadBOs();
     }
-   public Manage_BO (BO[] bo ,int  size) {
-        boList = new BO[size] ;
+   public Manage_BO (ArrayList<BO> bo ,int  size) {
+        boList = new ArrayList<BO>(size) ;
         boList = bo;
         saveBOs();
    }
 
     public void addBO(BO bo) {
      try {
-       for (int i =0 ; i< boList.length ; i++) {
-         if(boList[i] == null) {
-             boList[i] = bo;
-             saveBOs();
-             break;
-
-         }
-       }
+       boList.add(bo);
+       saveBOs();
      }catch(ArrayIndexOutOfBoundsException ex) {
          System.out.println(ex);
 
         }
     }
     public void updateBO(int index, BO bo) {
-        if (index >= 0 && index < boList.length) {
-            boList[index] = bo;
+        if (index >= 0 && index < boList.size()) {
+            boList.set(index , bo);
             //boList.set(index, bo);
             saveBOs();
         }
     }
 
     public void removeBO(int index) {
-        if (index >= 0 && index < boList.length) {
-            boList[index] = null;
-            //boList.remove(index);
-            saveBOs();
-        }
+       boList.remove(index);
     }
-    public BO[] getBOs() {
+    public ArrayList<BO> getBOs() {
         return boList;
     }
     public void saveBOs() {
@@ -63,7 +53,7 @@ public class Manage_BO implements Serializable {
 
     public void loadBOs() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILE_NAME))) {
-            boList = (BO[]) ois.readObject();
+            boList = (ArrayList<BO>) ois.readObject();
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("No existing data found or error loading data. Starting fresh.");
         }

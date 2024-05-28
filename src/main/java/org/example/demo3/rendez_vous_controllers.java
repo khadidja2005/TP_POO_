@@ -59,7 +59,7 @@ public class rendez_vous_controllers {
             rendez_vous_controllers controller = loader.getController();
 
             // Load the patients
-            Manage_patients MP = new Manage_patients(2);
+            Manage_patients MP = new Manage_patients(10);
             MP.loadPatients();
             System.out.println("Patients:############################################# ");
             MP.displayPatients();
@@ -157,7 +157,7 @@ public class rendez_vous_controllers {
     @FXML
     public void switchToAjouterPatients(ActionEvent e) {
         try {
-            HelloApplication.loadPage("Ajouter_patient.fxml");
+            HelloApplication.loadPage("ajouter_patient.fxml");
         } catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());

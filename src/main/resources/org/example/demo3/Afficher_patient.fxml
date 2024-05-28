@@ -166,7 +166,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="143.0" prefWidth="327.0">
                <children>
-                  <Button fx:id="afficher_rend" mnemonicParsing="false" onAction="#switchToAfficherRendezVous" prefHeight="40.0" prefWidth="262.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="affichier liste des rendez_vous" textFill="WHITE">
+                  <Button fx:id="afficher_rend" mnemonicParsing="false" onAction="#switchtolisterendezvous" prefHeight="40.0" prefWidth="262.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="affichier liste des rendez_vous" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>

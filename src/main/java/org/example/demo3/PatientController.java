@@ -1,35 +1,38 @@
 package org.example.demo3;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.DatePicker;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+import javafx.util.Callback;
 import org.example.demo3.classes.*;
 import static org.example.demo3.rendez_vous_controllers.item_pat;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class PatientController {
     private static boolean initialized = false;
     @FXML
-    public TextField nom_pat;
+    public TextField nom_pat = new TextField();
     @FXML
-    public TextField prenom_pat;
+    public TextField prenom_pat = new TextField();
 
     @FXML
-    public TextField adress_pat ;
+    public TextField adress_pat = new TextField();
     @FXML
-    public TextField dat_naiss;
+    public TextField dat_naiss = new TextField();
     @FXML
-    public TextField lieu_naiss;
+    public TextField lieu_naiss = new  TextField();
     @FXML
-    private TextField Nom_patient;
+    private TextField Nom_patient ;
     @FXML
     private TextArea Observation_consultation;
     @FXML
@@ -60,22 +63,22 @@ public class PatientController {
     private TextField thematique;
 
     @FXML
-    private TextField patient1;
+    private TextField patient1 = new TextField();
 
     @FXML
-    private TextField patient2;
+    private TextField patient2 = new TextField();
 
     @FXML
-    private TextField patient3;
+    private TextField patient3 = new TextField();
 
     @FXML
-    private TextField patient4;
+    private TextField patient4 = new TextField();
 
     @FXML
-    private TextField patient5;
+    private TextField patient5 = new TextField();
 
     @FXML
-    private TextField patient6;
+    private TextField patient6 = new TextField();
 
     @FXML
     private TextField AgePatient;
@@ -103,19 +106,20 @@ public class PatientController {
 
     @FXML
     private Label successMessageLabel;
+    @FXML
+    private ListView<Rendez_vous> listViewRDV;
    @FXML
-   public void initialize() {
-      if(!initialized) {
-           //System.out.println("Patient controller initialized");
-           nom_pat.setText(item_pat.getNom());
-           prenom_pat.setText(item_pat.getPrenom());
-           adress_pat.setText(item_pat.getAdresse());
-           dat_naiss.setText(item_pat.getDate_de_naissance());
-           lieu_naiss.setText(item_pat.getLieu_de_naissance());
-           initialized = true;
-       }
+   private void initialize() {
+       initializeData();
        System.out.println("Patient controller initialized");
-
+    }
+    private void initializeData() {
+       if(nom_pat != null && prenom_pat!=null && adress_pat != null && dat_naiss !=null && lieu_naiss != null && item_pat != null )
+        nom_pat.setText(item_pat.getNom());
+        prenom_pat.setText(item_pat.getPrenom());
+        adress_pat.setText(item_pat.getAdresse());
+        dat_naiss.setText(item_pat.getDate_de_naissance());
+        lieu_naiss.setText(item_pat.getLieu_de_naissance());
     }
     @FXML
     void handleSessionTypeSelection(ActionEvent event) {
@@ -203,6 +207,18 @@ public class PatientController {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+  @FXML
+  public void retourvers_page_afficher_patient(ActionEvent e) {
+       try {
+         HelloApplication.loadPage("Afficher_patient.fxml");
+
+       } catch(IOException ex) {
+           ex.printStackTrace();
+           System.out.println("Error: " + ex.getMessage());
+      }
+  }
+
+
 
     @FXML
     public void ajouterpatient(ActionEvent e) {
@@ -212,7 +228,7 @@ public class PatientController {
             String adress = adresse.getText();
             String date_naissance = Date_naissance.getText();
             String lieu_naissanc = lieu_naissance.getText();
-            Manage_patients mp = new Manage_patients(10);
+            Manage_patients mp = new Manage_patients(20);
             mp.loadPatients();
 
             Patient patient = new Patient();
@@ -270,13 +286,16 @@ public class PatientController {
             String sessionType = typeSeanceMenuButton.getText();
 
             Suivie newSuivi = new Suivie(sessionType, patientText, false, "1h", observation, date, heure);
-
             Dossier doc = mp.getPatients().get(patientIndex).getDosssier();
             doc.addRendezVous(newSuivi);
-
+            mp.loadPatients();
+            //doc.addRendezVous(newSuivi);
+            mp.getPatients().get(patientIndex).setDossier(doc);
+            //item_pat.setDossier(doc);
+            mp.savePatients();
+            //Dossier doc = mp.getPatients().get(patientIndex).getDosssier();
             successMessageLabel.setText("Rendez-vous ajouté avec succès");
             successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);
-
         } catch (Exception ex) {
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
@@ -287,7 +306,7 @@ public class PatientController {
 
     public void ajouteratelier(ActionEvent e) {
         try {
-            int[] patientNumbers = {
+        int[] patientNumbers = {
                     Integer.parseInt(patient1.getText()),
                     Integer.parseInt(patient2.getText()),
                     Integer.parseInt(patient3.getText()),
@@ -296,8 +315,9 @@ public class PatientController {
                     Integer.parseInt(patient6.getText())
             };
 
+
             Manage_patients mp = new Manage_patients(10);
-            mp.loadPatients(); // Assuming this method loads the patients into the array
+            mp.loadPatients();
 
             String date = Agenda.getValue().toString();
             String heure = Heure.getText();
@@ -385,8 +405,15 @@ public class PatientController {
             Consultation newConsultation = new Consultation(nom, prenom, age, true, "1h", observation, date, heure);
 
             // Add the consultation to the patient's dossier
-            Dossier doc = mp.getPatients().get(patientIndex).getDosssier();
+            //Dossier doc = mp.getPatients().get(patientIndex).getDosssier();
+            Dossier doc = new Dossier();
             doc.addRendezVous(newConsultation);
+            mp.loadPatients();
+            mp.getPatients().get(patientIndex).setDossier(doc);
+            mp.savePatients();
+            item_pat.setDossier(doc);
+            //Dossier doc =item_pat.getDosssier();
+
 
             // Show success message
             successMessageLabel.setText("Rendez-vous ajouté avec succès");
@@ -398,6 +425,92 @@ public class PatientController {
             successMessageLabel.setText("Erreur lors de l'ajout du rendez-vous");
             successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
         }
+    }
+    @FXML
+    public void switchtolisterendezvous( ActionEvent e) {
+     try {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("Afficher_rendez.fxml"));
+         Parent root = loader.load();
+         // Get the controller for the loaded FXML
+         PatientController controller = loader.getController();
+
+         ArrayList<Rendez_vous> RDV = new ArrayList<Rendez_vous>();
+
+         RDV = item_pat.getDosssier().get_rendez_vous();
+         ObservableList<Rendez_vous> list_RDV = FXCollections.observableArrayList(RDV);
+         System.out.println("ObservableList contents: " + list_RDV);
+         if (controller.listViewRDV != null) {
+             controller.listViewRDV.setItems(list_RDV);
+             System.out.println("ListView contents: " + controller.listViewRDV.getItems());
+             controller.listViewRDV.setCellFactory(new Callback<>() {
+                 @Override
+                 public ListCell<Rendez_vous> call(ListView<Rendez_vous> listView) {
+                     return new ListCell<Rendez_vous>() {
+                         @Override
+                         protected void updateItem(Rendez_vous item, boolean empty) {
+                             super.updateItem(item, empty);
+                             System.out.println("item: " + item);
+                             if (item != null && !empty) {
+                                 HBox hBox = new HBox(20);
+                                 hBox.setPrefHeight(50);
+                                 hBox.setAlignment(Pos.CENTER_LEFT);
+
+                                 Label name = new Label("Rendez_vous" + (getIndex() + 1));
+                                 Label nom = new Label(item.getDate());
+                                 Label prenom = new Label(item.getDuree());
+
+                                 name.setPrefWidth(70);
+                                 nom.setPrefWidth(150);
+                                 prenom.setPrefWidth(150);
+
+                                 Button afficherButton = new Button("Afficher patient");
+
+                                 afficherButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+
+                                 afficherButton.setOnAction(event -> {
+                                     //PC.afficherinfo_patient();
+                                     try {
+                                         HelloApplication.loadPage("Afficher_patient.fxml");
+                                     } catch (IOException ex) {
+                                         throw new RuntimeException(ex);
+                                     }
+                                     //PC.afficherinfo_patient(item);
+                                 });
+
+                                 setOnMouseEntered(event -> setStyle("-fx-background-color: #e6e7e5;"));
+                                 setOnMouseExited(event -> setStyle("-fx-background-color: white;"));
+
+                                 HBox buttonsBox = new HBox(20);
+                                 buttonsBox.getChildren().addAll(afficherButton);
+                                 buttonsBox.setAlignment(Pos.CENTER_LEFT);
+
+                                 hBox.getChildren().addAll(name, nom, prenom, buttonsBox);
+                                 setGraphic(hBox);
+                             } else {
+                                 setGraphic(null);
+                                 System.out.println("item is null");
+                             }
+                         }
+                     };
+                 }
+             });
+             controller.listViewRDV.refresh();
+         } else {
+            System.out.println("ListView is null in the loaded controller");
+        }
+
+        // Set the new scene
+        Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+
+
+     }catch (IOException ex) {
+         ex.printStackTrace();
+         System.out.println("Error: " + ex.getMessage());
+
+
+     }
     }
 
     /*@FXML

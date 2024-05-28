@@ -53,7 +53,7 @@
             </VBox>
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="254.0">
                <children>
-                  <MenuButton mnemonicParsing="false" prefHeight="30.0" prefWidth="172.0" text="type de sceance">
+                  <MenuButton fx:id="typeSeanceMenuButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="172.0" text="type de sceance">
                        <items>
                           <MenuItem onAction="#handleSessionTypeSelection" text="en ligne" />
                           <MenuItem onAction="#handleSessionTypeSelection" text="presentielle" />

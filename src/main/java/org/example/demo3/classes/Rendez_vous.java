@@ -18,6 +18,9 @@ public class Rendez_vous implements Serializable {
         this.date = date;
         this.heure = heure;
     }
+    public Rendez_vous () {
+
+    }
 
     public boolean isPremiere_visite() {
         return premiere_visite;

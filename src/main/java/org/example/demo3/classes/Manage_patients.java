@@ -8,6 +8,9 @@ import java.util.List;
 public class Manage_patients implements Serializable {
     private static final String FILE_NAME = "src/main/resources/DATA/patients.txt";
     private ArrayList<Patient> patients;
+    public Manage_patients () {
+        loadPatients();
+    }
 
     public Manage_patients(int length) {
         patients = new ArrayList<>(length);

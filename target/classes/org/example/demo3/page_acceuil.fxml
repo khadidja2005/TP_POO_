@@ -86,7 +86,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="298.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="63.0" prefWidth="247.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Gérer les Bilans orthophoniques" textFill="WHITE">
+                        <Button fx:id="retour" mnemonicParsing="false" onAction="#GotoListe_BO" prefHeight="63.0" prefWidth="247.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Gérer les Bilans orthophoniques" textFill="WHITE">
                            <font>
                               <Font name="Arial" size="15.0" />
                            </font>

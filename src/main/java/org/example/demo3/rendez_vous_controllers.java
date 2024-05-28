@@ -13,6 +13,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import org.example.demo3.classes.BO;
+import org.example.demo3.classes.Manage_BO;
 import org.example.demo3.classes.Manage_patients;
 import org.example.demo3.classes.Patient;
 
@@ -22,6 +24,8 @@ public class rendez_vous_controllers {
     @FXML
     private Button retour;
     public static Patient item_pat ;
+
+    public  static BO item_bo ;
     @FXML
     private Button gererPatients;
 
@@ -33,6 +37,11 @@ public class rendez_vous_controllers {
 
     @FXML
     private ListView<Patient> listView;
+
+    @FXML
+    private ListView<BO> boListView ;
+    @FXML
+    private Button retour_acuiel ;
 
     @FXML
     public void initialize() {
@@ -182,4 +191,110 @@ public class rendez_vous_controllers {
             System.out.println("Error: " + ex.getMessage());
         }
     }
+    @FXML
+    public void GotoListe_BO (ActionEvent e) {
+     try {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("Liste_BO.fxml"));
+         Parent root = loader.load();
+
+         // Get the controller for the loaded FXML
+         rendez_vous_controllers controller = loader.getController();
+         Manage_BO MB = new Manage_BO(10);
+         MB.loadBOs();
+         ObservableList<BO> lBO = FXCollections.observableArrayList(MB.getBOs());
+         System.out.println("ObservableList contents: " + lBO);
+         if (controller.boListView != null) {
+             controller.boListView.setItems(lBO);
+             System.out.println("ListView contents: " + controller.boListView.getItems());
+             controller.boListView.setCellFactory(new Callback<>() {
+                 @Override
+                 public ListCell<BO> call(ListView<BO> boListView) {
+                     return new ListCell<BO>() {
+                         @Override
+                         protected void updateItem(BO item, boolean empty) {
+                             super.updateItem(item, empty);
+                             System.out.println("item: " + item);
+                             if (item != null && !empty) {
+                                 HBox hBox = new HBox(20);
+                                 hBox.setPrefHeight(50);
+                                 hBox.setAlignment(Pos.CENTER_LEFT);
+
+                                 Label name = new Label("BO" + (getIndex() + 1));
+                                 Label nom = new Label(item.getNom_BO());
+                                 Label prenom = new Label(item.getNumero_BO()== true ? "premier_bo" : "BO");
+
+                                 name.setPrefWidth(70);
+                                 nom.setPrefWidth(150);
+                                 prenom.setPrefWidth(150);
+
+                                 Button afficherButton = new Button("Afficher");
+
+                                 afficherButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+
+                                 afficherButton.setOnAction(event -> {
+
+                                     System.out.println("Afficher patient: " + item);
+
+                                     item_bo = item;
+                                     //PC.afficherinfo_patient();
+                                     try {
+                                         HelloApplication.loadPage("Afficher_patient.fxml");
+                                     } catch (IOException ex) {
+                                         throw new RuntimeException(ex);
+                                     }
+                                     //PC.afficherinfo_patient(item);
+                                 });
+
+                                 setOnMouseEntered(event -> setStyle("-fx-background-color: #e6e7e5;"));
+                                 setOnMouseExited(event -> setStyle("-fx-background-color: white;"));
+
+                                 HBox buttonsBox = new HBox(20);
+                                 buttonsBox.getChildren().addAll(afficherButton);
+                                 buttonsBox.setAlignment(Pos.CENTER_LEFT);
+
+                                 hBox.getChildren().addAll(name, nom, prenom, buttonsBox);
+                                 setGraphic(hBox);
+                             } else {
+                                 setGraphic(null);
+                                 System.out.println("item is null");
+                             }
+                         }
+                     };
+                 }
+             });
+             controller.boListView.refresh();
+         } else {
+             System.out.println("ListView is null in the loaded controller");
+         }
+         // Set the new scene
+         Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
+         stage.setScene(new Scene(root));
+         stage.show();
+     } catch (IOException ex){
+        ex.printStackTrace();
+        System.out.println("error" + ex.getMessage());
+        }
+    }
+    @FXML
+    public void retour_aceuil_BO (ActionEvent e) {
+        try {
+           HelloApplication.loadPage("page_acceuil.fxml");
+
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error :" + ex.getMessage());
+        }
+    }
+    @FXML
+    public void acceuil_vers_BO (ActionEvent e) {
+        try {
+           HelloApplication.loadPage("Liste_BO.fxml");
+        }catch (IOException ex) {
+           ex.printStackTrace();
+           System.out.println("Error :" + ex.getMessage());
+        }
+
+    }
+
+
 }

@@ -49,6 +49,7 @@ public class HelloApplication extends Application {
         QCM qcm5 = new QCM("Quelle est la réaction des autres lorsque vous parlez ?");
         qcm5.setPropostions(new String[]{"Ils comprennent bien", " Ils demandent souvent de répéter", "Ils ne comprennent pas du tout", " Ils évitent de parler avec moi"});
         Test_questionnaire test1 = new Test_questionnaire(8);
+        
         test1.ajouterQuestion(QST_libre_1);
         test1.ajouterQuestion(Qst_libre_2);
         test1.ajouterQuestion(qcm2);
@@ -126,14 +127,14 @@ public class HelloApplication extends Application {
         //manage_bo2.getBOs().removeAll(manage_bo2.getBOs());
         //manage_bo2.addBO(bo1);
         //manage_bo2.addBO(bo2);
-        Manage_BO bo22 = new Manage_BO(10);
+        /*Manage_BO bo22 = new Manage_BO(10);
         bo22.addBO(bo1);
         bo22.addBO(bo2);
-        bo22.loadBOs();
+        bo22.loadBOs();*/
         //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
         // #####################################################################################
         //##############  CREER PATIENT  ####################################################
-        Patient patient = new Patient();
+        /*Patient patient = new Patient();
         patient.setAdresse("Oued Smar Alger");
         patient.setDate_de_naissance("02/02/2005");
         patient.setNom("Brakta");
@@ -146,11 +147,11 @@ public class HelloApplication extends Application {
         manage_patient.removePatient(1);
         //
         manage_patient.addPatient(patient);
-        manage_patient.displayPatients();
+        manage_patient.displayPatients();*/
         //manage_bo2.displayBOs();
         // ########################################################################################
         // #################  CREER ORTHOPHONISTE  ################################################
-        Orthophoniste orthophoniste = new Orthophoniste();
+        /*Orthophoniste orthophoniste = new Orthophoniste();
         orthophoniste.setAdresse("New York");
         orthophoniste.setAdresse_email("marchelle21@esi.dz");
         orthophoniste.setMot_de_passe("march21");
@@ -159,8 +160,7 @@ public class HelloApplication extends Application {
         orthophoniste.setNumero_telephone("0665132395");
         Manage_doctor manage_doctor = new Manage_doctor(10);
         manage_doctor.addOrtho(orthophoniste);
-        manage_doctor.displayOrthos();
-
+        manage_doctor.displayOrthos();*/
         launch();
     }
 }

@@ -1,37 +1,31 @@
 package org.example.demo3.classes;
 
-public class Anamnese {
-    private QST_libre[] qst_libre;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-    public Anamnese(QST_libre[] qst_libre) {
+public class Anamnese implements Serializable {
+    private ArrayList<QST_libre> qst_libre = new ArrayList<QST_libre>(2);
+
+    public Anamnese(ArrayList<QST_libre> qst_libre) {
         this.qst_libre = qst_libre;
     }
     public Anamnese() {
     }
-    public QST_libre[] getQst_libre() {
+    public ArrayList<QST_libre> getQst_libre() {
         return qst_libre;
     }
-    public void setQst_libre(QST_libre[] qst_libre) {
+    public void setQst_libre(ArrayList<QST_libre> qst_libre) {
         this.qst_libre = qst_libre;
     }
     public void ajouterQST_libre(QST_libre qst_libre) {
-        for (int i=0 ; i < this.qst_libre.length ; i++){
-            if (i == this.qst_libre.length-1){
-                i = i+1;
-                this.qst_libre[i] = qst_libre;
-            }
-        }
-
+        this.qst_libre.add(qst_libre);
     }
     public void supprimerQST_libre (QST_libre qst_libre){
-        for (int i = 0 ; i < this.qst_libre.length ; i++){
-            if (this.qst_libre[i] == qst_libre){
-                this.qst_libre[i] = null;
-            }
-        }
+        this.qst_libre.remove(qst_libre);
     }
     public void modifierQST_libre (QST_libre qst_libre ,int index){
-        this.qst_libre[index] = qst_libre;
+        this.qst_libre.set(index , qst_libre);
     }
 
 }

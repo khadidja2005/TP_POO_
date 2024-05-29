@@ -10,7 +10,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.rendez_vous_controllers">
    <children>
-      <HBox prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
+      <HBox prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
          <children>
             <VBox alignment="CENTER" prefHeight="55.0" prefWidth="214.0">
                <children>
@@ -21,7 +21,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="503.0">
+            <VBox alignment="CENTER_RIGHT" prefHeight="53.0" prefWidth="425.0">
                <children>
                   <Button fx:id="retour_acuiel" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#retour_aceuil_BO" prefHeight="25.0" prefWidth="88.0" text="Retour" />
                </children>
@@ -34,6 +34,16 @@
             <Insets bottom="40.0" />
          </VBox.margin>
       </HBox>
-      <ListView fx:id="boListView" prefHeight="309.0" prefWidth="600.0" />
+      <HBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="score" mnemonicParsing="false" onAction="#OnclickScore" prefHeight="25.0" prefWidth="137.0" text="Afficher Score">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Text fx:id="show" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="116.80334281921387" />
+         </children>
+      </HBox>
+      <ListView fx:id="boListView" prefHeight="313.0" prefWidth="600.0" />
    </children>
 </VBox>

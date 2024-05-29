@@ -15,6 +15,18 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+
+import org.example.demo3.classes.BO;
+import org.example.demo3.classes.Manage_BO;
+import org.example.demo3.classes.Manage_patients;
+import org.example.demo3.classes.Patient;
+import java.awt.Desktop;
+import java.io.File;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.example.demo3.classes.*;
 
 import java.io.IOException;
@@ -34,6 +46,8 @@ public class rendez_vous_controllers {
     private Button score ;
     public static Patient item_pat ;
     public static ArrayList<Test_questionnaire> item_testqst ;
+
+    public static Manage_patients md = new Manage_patients();
 
     public  static BO item_bo ;
     public  static QST_libre QST_lb;
@@ -215,6 +229,15 @@ public class rendez_vous_controllers {
         }
     }
 
+    @FXML
+    public void OnclickStastistiques(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("statistiques.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
     @FXML
     public void OnclickgestionInfo(ActionEvent e) {
         try {
@@ -490,6 +513,18 @@ public class rendez_vous_controllers {
             Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error :" + ex.getMessage());
+        }
+
+    }
+
+
+    @FXML
+    public void SwitchDocumentation (ActionEvent e) {
+        try {
+            HelloApplication.loadPage("documentation.fxml");
         }catch (IOException ex) {
             ex.printStackTrace();
             System.out.println("Error :" + ex.getMessage());

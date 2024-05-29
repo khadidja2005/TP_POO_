@@ -17,16 +17,16 @@
          <children>
             <VBox prefHeight="25.0" prefWidth="165.0">
                <children>
-                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#OnclickCreerRendezVous" text="Retour" textAlignment="CENTER" />
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-               <children>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Prise de Rendez-vous " wrappingWidth="454.66654884815216">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#OnclickCreerRendezVous" prefHeight="25.0" prefWidth="84.0" text="Retour" textAlignment="CENTER" />
                </children>
             </VBox>
          </children>

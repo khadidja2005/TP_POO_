@@ -20,6 +20,9 @@ import java.util.ArrayList;
 
 public class PatientController {
     private static boolean initialized = false;
+    public static Rendez_vous item_RDV;
+
+
     @FXML
     public TextField nom_pat = new TextField();
     @FXML
@@ -107,7 +110,7 @@ public class PatientController {
     @FXML
     private Label successMessageLabel;
     @FXML
-    private ListView<Rendez_vous> listViewRDV;
+    ListView<Rendez_vous> listViewRDV;
    @FXML
    private void initialize() {
        initializeData();
@@ -193,6 +196,16 @@ public class PatientController {
         try {
             HelloApplication.loadPage("Afficher_patient.fxml");
         } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
+
+    @FXML
+    public void HandelRetourAction2(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("page_acceuil.fxml");
+        } catch (IOException ex){
             ex.printStackTrace();
             System.out.println("Error: " + ex.getMessage());
         }
@@ -463,14 +476,15 @@ public class PatientController {
                                  nom.setPrefWidth(150);
                                  prenom.setPrefWidth(150);
 
-                                 Button afficherButton = new Button("Afficher patient");
+                                 Button afficherButton = new Button("Afficher RDV");
 
                                  afficherButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
 
                                  afficherButton.setOnAction(event -> {
                                      //PC.afficherinfo_patient();
                                      try {
-                                         HelloApplication.loadPage("Afficher_patient.fxml");
+                                         item_RDV = item ;
+                                         HelloApplication.loadPage("Afficher_un_rend.fxml");
                                      } catch (IOException ex) {
                                          throw new RuntimeException(ex);
                                      }

@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.example.demo3.classes.*;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     private static Stage primaryStage;
@@ -106,6 +107,8 @@ public class HelloApplication extends Application {
         Trouble trouble3 = new Trouble("trouble3" , Categorie_trouble.trouble_neuro_developpementaux);
         Trouble trouble4 = new Trouble("trouble4" , Categorie_trouble.trouble_cognitifs);
         bo2.setTrouble(new Trouble[]{trouble3 , trouble4});
+
+
         //Manage_BO manageBo = new Manage_BO(2);
         //manageBo.addBO(bo1);
         //manageBo.addBO(bo2);
@@ -134,7 +137,7 @@ public class HelloApplication extends Application {
         //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
         // #####################################################################################
         //##############  CREER PATIENT  ####################################################
-        /*Patient patient = new Patient();
+      /*  Patient patient = new Patient();
         patient.setAdresse("Oued Smar Alger");
         patient.setDate_de_naissance("02/02/2005");
         patient.setNom("Brakta");
@@ -147,11 +150,11 @@ public class HelloApplication extends Application {
         manage_patient.removePatient(1);
         //
         manage_patient.addPatient(patient);
-        manage_patient.displayPatients();*/
+        manage_patient.displayPatients();
         //manage_bo2.displayBOs();
         // ########################################################################################
         // #################  CREER ORTHOPHONISTE  ################################################
-        /*Orthophoniste orthophoniste = new Orthophoniste();
+        Orthophoniste orthophoniste = new Orthophoniste();
         orthophoniste.setAdresse("New York");
         orthophoniste.setAdresse_email("marchelle21@esi.dz");
         orthophoniste.setMot_de_passe("march21");

@@ -14,22 +14,22 @@ import java.io.IOException;
 public class ParametreController {
 
     @FXML
-    private TextField nomField;
+    private TextField nomField = new TextField();
 
     @FXML
-    private TextField prenomField;
+    private TextField prenomField=new TextField();
 
     @FXML
-    private TextField emailField;
+    private TextField emailField= new TextField();
 
     @FXML
-    private TextField phoneField;
+    private TextField phoneField= new TextField();
 
     @FXML
-    private TextField addressField;
+    private TextField addressField = new TextField();
 
     @FXML
-    private PasswordField passwordField;
+    private PasswordField passwordField = new PasswordField();
 
     @FXML
     private Button retour;
@@ -73,6 +73,7 @@ public class ParametreController {
             md.getOrthophoniste(0).setNom(nom);
             md.getOrthophoniste(0).setPrenom(prenom);
             md.getOrthophoniste(0).setMot_de_passe(password);
+            md.saveOrthos();
 
             // Met à jour les champs d'affichage
             initializeData(); // Rafraîchit les données affichées sur la page

@@ -63,7 +63,7 @@
                   </HBox>
                   <HBox alignment="TOP_CENTER" prefHeight="119.0" prefWidth="278.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="280.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Statistiques" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#OnclickStastistiques" prefHeight="55.0" prefWidth="280.0" style="-fx-border-color: #ffffff; -fx-border-width: 4px; -fx-background-color: #3191ff;" text="Statistiques" textFill="WHITE">
                            <font>
                               <Font size="15.0" />
                            </font>

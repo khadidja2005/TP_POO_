@@ -23,7 +23,7 @@
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                   </Text>
-                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchTolistePatients" prefHeight="25.0" prefWidth="71.0" text="retour" />
+                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#HandelRetourAction2" prefHeight="25.0" prefWidth="71.0" text="retour" />
                </children>
             </HBox>
             <HBox prefHeight="26.0" prefWidth="594.0">

@@ -17,13 +17,19 @@ import org.example.demo3.classes.BO;
 import org.example.demo3.classes.Manage_BO;
 import org.example.demo3.classes.Manage_patients;
 import org.example.demo3.classes.Patient;
+import java.awt.Desktop;
+import java.io.File;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 
 public class rendez_vous_controllers {
     @FXML
     private Button retour;
     public static Patient item_pat ;
+
+    public static Manage_patients md = new Manage_patients();
 
     public  static BO item_bo ;
     @FXML
@@ -183,6 +189,15 @@ public class rendez_vous_controllers {
     }
 
     @FXML
+    public void OnclickStastistiques(ActionEvent e) {
+        try {
+            HelloApplication.loadPage("statistiques.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error: " + ex.getMessage());
+        }
+    }
+    @FXML
     public void OnclickgestionInfo(ActionEvent e) {
         try {
             HelloApplication.loadPage("gestion_info.fxml");
@@ -292,6 +307,18 @@ public class rendez_vous_controllers {
         }catch (IOException ex) {
            ex.printStackTrace();
            System.out.println("Error :" + ex.getMessage());
+        }
+
+    }
+
+
+    @FXML
+    public void SwitchDocumentation (ActionEvent e) {
+        try {
+            HelloApplication.loadPage("documentation.fxml");
+        }catch (IOException ex) {
+            ex.printStackTrace();
+            System.out.println("Error :" + ex.getMessage());
         }
 
     }

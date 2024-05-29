@@ -44,7 +44,7 @@
       </HBox>
       <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="351.0" style="-fx-border-color: #ffffff; -fx-border-width: 4PX; -fx-background-color: #3191ff;" text=" la documentation de l'application." textFill="WHITE">
+            <Button mnemonicParsing="false" onAction="#SwitchDocumentation" prefHeight="40.0" prefWidth="351.0" style="-fx-border-color: #ffffff; -fx-border-width: 4PX; -fx-background-color: #3191ff;" text=" la documentation de l'application." textFill="WHITE">
                <font>
                   <Font name="Arial" size="15.0" />
                </font>

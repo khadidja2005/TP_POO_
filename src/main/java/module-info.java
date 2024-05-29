@@ -8,6 +8,8 @@ module org.example.demo3 {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires com.fasterxml.jackson.databind;
+    requires java.prefs;
+    requires java.desktop;
 
     opens org.example.demo3 to javafx.fxml;
     exports org.example.demo3;

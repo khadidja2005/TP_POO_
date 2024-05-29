@@ -72,13 +72,7 @@ public class Dossier implements Serializable {
     }
     // Method to add a Fichier_de_suivi
     public void addFichierDeSuivi(Fichier_de_suivi newFichierDeSuivi) {
-        for (int i = 0; i < fichier_de_suivi.size(); i++) {
-            if (fichier_de_suivi.get(i) == null) {
-                fichier_de_suivi.set(i , newFichierDeSuivi);
-                return;
-            }
-        }
-        System.out.println("No space left to add new Fichier_de_suivi");
+        fichier_de_suivi.add(newFichierDeSuivi);
     }
 
     @Override

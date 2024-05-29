@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.ParametreController">
+   <children>
+      <VBox prefHeight="93.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#OnclickParametre" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #3191ff; -fx-border-color: #3191ff;" text="Continuer">
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="450.0" top="30.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Text boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="Documentation du Logiciel de Gestion des Rendez-vous et des Bilans OrthophoniquesIntroductionLa documentation du Logiciel de Gestion des Rendez-vous et des Bilans Orthophoniques fournit des informations détaillées sur l'installation, l'utilisation et la maintenance de l'application. Ce logiciel est conçu pour aider les orthophonistes à gérer efficacement leurs rendez-vous et leurs bilans orthophoniques.InstallationConfiguration requiseSystème d'exploitation : Windows 10, macOS, LinuxMémoire vive (RAM) : 4 Go minimum recommandéEspace disque : 200 Mo d'espace libreNavigateur Web : Google Chrome, Mozilla Firefox, SafariProcédure d'installationTéléchargez le fichier d'installation à partir du site Web officiel.Exécutez le programme d'installation et suivez les instructions à l'écran.Une fois l'installation terminée, lancez le logiciel et suivez les étapes de configuration initiale.UtilisationConnexionLancez l'application à partir du menu de démarrage.Entrez vos identifiants de connexion (nom d'utilisateur et mot de passe) dans l'écran de connexion.Cliquez sur le bouton &quot;Connexion&quot; pour accéder au tableau de bord principal.Tableau de bordLe tableau de bord principal affiche un aperçu des rendez-vous à venir, des bilans orthophoniques en attente et des tâches à accomplir. Vous pouvez effectuer les actions suivantes à partir du tableau de bord :Consulter et gérer les rendez-vous planifiés.Créer de nouveaux bilans orthophoniques.Consulter les détails des patients et mettre à jour leurs informations.Accéder aux rapports et aux statistiques.Gestion des Rendez-vousPour planifier un nouveau rendez-vous, cliquez sur le bouton &quot;Nouveau Rendez-vous&quot; et remplissez le formulaire de rendez-vous.Pour modifier ou annuler un rendez-vous existant, cliquez sur le rendez-vous dans le calendrier et apportez les modifications nécessaires.Création de Bilans OrthophoniquesAccédez à la section des bilans orthophoniques à partir du menu principal.Cliquez sur le bouton &quot;Nouveau Bilan&quot; pour créer un nouveau bilan orthophonique.Remplissez les informations requises, telles que le nom du patient, la date du bilan, les observations, etc.Enregistrez le bilan orthophonique une fois que toutes les informations ont été saisies.MaintenanceSauvegarde des DonnéesIl est recommandé de sauvegarder régulièrement les données de l'application pour éviter toute perte de données en cas de panne du système ou de corruption des fichiers. Vous pouvez utiliser les fonctionnalités de sauvegarde intégrées à l'application ou utiliser des solutions tierces pour sauvegarder vos données.Mises à JourAssurez-vous de maintenir votre logiciel à jour en installant les dernières mises à jour et correctifs disponibles. Les mises à jour peuvent apporter de nouvelles fonctionnalités, améliorer la sécurité et résoudre les bugs.Support TechniquePour toute question ou problème technique, veuillez contacter notre équipe de support technique à l'adresse support@votresociete.com. Nous sommes là pour vous aider et répondre à toutes vos questions dans les plus brefs délais." wrappingWidth="491.13671875" />
+      <VBox prefHeight="49.0" prefWidth="600.0" />
+   </children>
+</VBox>

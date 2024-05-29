@@ -9,22 +9,25 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #eeeeee; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.PatientController">
    <children>
-      <HBox prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
+      <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" style="-fx-background-color: #3191ff;">
          <children>
-            <VBox alignment="CENTER" prefHeight="46.0" prefWidth="92.0">
+            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="442.0">
                <children>
-                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchToAfficherPatients" prefHeight="25.0" prefWidth="68.0" text="Retour" />
+                  <VBox alignment="CENTER" prefHeight="45.0" prefWidth="373.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu pour choisir le type de rendez_vous">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="-200.0" />
+                     </VBox.margin>
+                  </VBox>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="45.0" prefWidth="375.0">
-               <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu pour choisir le type de rendez_vous">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
+            <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#switchToAfficherPatients" prefHeight="25.0" prefWidth="68.0" text="Retour" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="600.0">

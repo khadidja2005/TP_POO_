@@ -12,12 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo3.objectifController">
    <children>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="630.0">
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="601.0">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="617.0" style="-fx-background-color: #3191ff;">
+            <HBox alignment="CENTER_RIGHT" prefHeight="37.0" prefWidth="606.0" style="-fx-background-color: #3191ff;">
                <children>
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiche de suivie" wrappingWidth="111.3720703125">
                      <font>
@@ -29,16 +28,12 @@
                         <Insets left="20.0" />
                      </HBox.margin>
                   </HBox>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Marchelle bertron" wrappingWidth="150.9375">
-                     <font>
-                        <Font name="Arial" size="14.0" />
-                     </font>
-                  </Text>
+                  <Button fx:id="retour" blendMode="LIGHTEN" mnemonicParsing="false" onAction="#GoToList" prefHeight="25.0" prefWidth="71.0" text="retour" />
                </children>
             </HBox>
-            <HBox prefHeight="376.0" prefWidth="630.0" style="-fx-background-color: #EEEEEE;">
+            <HBox prefHeight="374.0" prefWidth="604.0" style="-fx-background-color: #EEEEEE;">
                <children>
-                  <HBox prefHeight="376.0" prefWidth="354.0" style="-fx-background-color: #ffffff;">
+                  <HBox prefHeight="369.0" prefWidth="293.0" style="-fx-background-color: #eeeeee;">
                      <children>
                         <VBox prefHeight="376.0" prefWidth="360.0" style="-fx-background-color: #eeeeee;">
                            <children>
@@ -46,7 +41,7 @@
                                  <children>
                                     <VBox alignment="CENTER_RIGHT" prefHeight="58.0" prefWidth="232.0">
                                        <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Note(1-5)" wrappingWidth="43.025390625">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Note (1-5)" wrappingWidth="100.0">
                                              <font>
                                                 <Font name="Arial" size="18.0" />
                                              </font>
@@ -67,7 +62,7 @@
                                        <children>
                                           <HBox prefHeight="43.0" prefWidth="267.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" text="objectif1">
+                                                <CheckBox fx:id="checkBox1" mnemonicParsing="false" text="Objectif 1">
                                                    <font>
                                                       <Font name="Arial" size="13.0" />
                                                    </font>
@@ -76,7 +71,7 @@
                                           </HBox>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <TextArea prefHeight="43.0" prefWidth="44.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
+                                                <TextArea fx:id="noteArea1" prefHeight="43.0" prefWidth="44.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -89,7 +84,7 @@
                                        <children>
                                           <HBox prefHeight="44.0" prefWidth="267.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" text="objectif2">
+                                                <CheckBox fx:id="checkBox2" mnemonicParsing="false" text="Objectif 2">
                                                    <font>
                                                       <Font name="Arial" size="13.0" />
                                                    </font>
@@ -98,7 +93,7 @@
                                           </HBox>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <TextArea prefHeight="44.0" prefWidth="46.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
+                                                <TextArea fx:id="noteArea2" prefHeight="44.0" prefWidth="46.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -111,7 +106,7 @@
                                        <children>
                                           <HBox prefHeight="44.0" prefWidth="267.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" text="objectif3">
+                                                <CheckBox fx:id="checkBox3" mnemonicParsing="false" text="Objectif 3">
                                                    <font>
                                                       <Font size="13.0" />
                                                    </font>
@@ -120,20 +115,20 @@
                                           </HBox>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <TextArea prefHeight="44.0" prefWidth="28.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
+                                                <TextArea fx:id="noteArea3" prefHeight="44.0" prefWidth="28.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
                                              </children>
                                           </HBox>
                                        </children>
                                     </HBox>
                                  </children>
                               </VBox>
-                              <VBox prefHeight="60.0" prefWidth="312.0">
+                              <VBox prefHeight="60.0" prefWidth="285.0">
                                  <children>
                                     <HBox prefHeight="30.0" prefWidth="317.0">
                                        <children>
                                           <HBox prefHeight="44.0" prefWidth="266.0">
                                              <children>
-                                                <CheckBox mnemonicParsing="false" text="objectif4">
+                                                <CheckBox fx:id="checkBox4" mnemonicParsing="false" text="Objectif 4">
                                                    <font>
                                                       <Font name="Arial" size="13.0" />
                                                    </font>
@@ -142,7 +137,7 @@
                                           </HBox>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                              <children>
-                                                <TextArea prefHeight="44.0" prefWidth="42.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
+                                                <TextArea fx:id="noteArea4" prefHeight="44.0" prefWidth="42.0" style="-fx-border-color: #3191ff; -fx-border-width: 3px;" />
                                              </children>
                                           </HBox>
                                        </children>
@@ -155,7 +150,7 @@
                                        <children>
                                           <HBox prefHeight="81.0" prefWidth="241.0">
                                              <children>
-                                                <TextArea prefHeight="81.0" prefWidth="265.0" promptText="recommandations" style="-fx-border-width: 3px; -fx-border-color: #3191ff;">
+                                                <TextArea fx:id="recommandationsArea" prefHeight="81.0" prefWidth="257.0" promptText="Recommandations" style="-fx-border-width: 3px; -fx-border-color: #3191ff;">
                                                    <font>
                                                       <Font name="Arial" size="18.0" />
                                                    </font>
@@ -180,24 +175,27 @@
                      <children>
                         <VBox prefHeight="305.0" prefWidth="284.0">
                            <children>
-                              <BarChart prefHeight="296.0" prefWidth="284.0">
+                              <BarChart fx:id="barChart" prefHeight="296.0" prefWidth="284.0">
                                  <xAxis>
-                                    <CategoryAxis prefHeight="0.0" prefWidth="227.0" side="BOTTOM" />
+                                    <CategoryAxis fx:id="xAxis" prefHeight="0.0" prefWidth="227.0" side="BOTTOM" />
                                  </xAxis>
                                  <yAxis>
-                                    <NumberAxis side="LEFT" />
+                                    <NumberAxis fx:id="yAxis" side="LEFT" />
                                  </yAxis>
                               </BarChart>
                            </children>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="85.0" prefWidth="284.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #3191ff; -fx-border-color: #ffffff; -fx-border-width: 3px;" text="Valider" textFill="WHITE">
+                              <Button fx:id="validerButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="118.0" style="-fx-background-color: #3191ff; -fx-border-color: #3191ff;" text="Valider">
                                  <font>
-                                    <Font name="Arial" size="15.0" />
+                                    <Font name="Arial" size="16.0" />
                                  </font>
                               </Button>
                            </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
                         </VBox>
                      </children>
                   </VBox>

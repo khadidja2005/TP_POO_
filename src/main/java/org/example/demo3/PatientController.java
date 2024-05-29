@@ -352,8 +352,8 @@ public class PatientController {
                     }
                 }
                 if (!patientFound) {
-                    lblError.setText("Le numéro de dossier: " + patientNumbers[i] + " n'existe pas");
-                    lblError.setTextFill(javafx.scene.paint.Color.RED);
+                    successMessageLabel.setText("Le numéro de dossier: " + patientNumbers[i] + " n'existe pas");
+                    successMessageLabel.setTextFill(javafx.scene.paint.Color.RED);
                     allPatientsFound = false;
                     break; // Stop checking further if one patient is not found
                 }
@@ -362,8 +362,10 @@ public class PatientController {
             // If all patients are found, add the Atelier to their dossiers
             if (allPatientsFound) {
                 for (int index : patientIndexes) {
+                    mp.loadPatients();
                     Dossier dossier = mp.getPatients().get(index).getDosssier();
                     dossier.addRendezVous(newAtelier);
+                    mp.savePatients();
                 }
                 successMessageLabel.setText("Atelier ajouté avec succès à tous les patients");
                 successMessageLabel.setTextFill(javafx.scene.paint.Color.GREEN);

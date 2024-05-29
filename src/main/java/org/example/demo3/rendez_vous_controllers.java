@@ -152,9 +152,10 @@ public class rendez_vous_controllers {
                                     nom.setPrefWidth(150);
                                     prenom.setPrefWidth(150);
 
-                                    Button afficherButton = new Button("Afficher patient");
-
+                                    Button afficherButton = new Button("Afficher");
+                                    Button supprimer = new Button("supprimer");
                                     afficherButton.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
+                                    supprimer.setStyle("-fx-background-color:white; -fx-text-fill: #3191ff; -fx-font-weight: 700;");
                                     afficherButton.setOnAction(event -> {
                                         System.out.println("Afficher patient: " + item);
                                         item_pat = item;
@@ -166,12 +167,16 @@ public class rendez_vous_controllers {
                                         }
                                         //PC.afficherinfo_patient(item);
                                     });
+                                    supprimer.setOnAction(event -> {
+                                        patients.remove(item);
+                                        //listViewQST2.getItems().remove(item);
+                                    });
 
                                     setOnMouseEntered(event -> setStyle("-fx-background-color: #e6e7e5;"));
                                     setOnMouseExited(event -> setStyle("-fx-background-color: white;"));
 
                                     HBox buttonsBox = new HBox(20);
-                                    buttonsBox.getChildren().addAll(afficherButton);
+                                    buttonsBox.getChildren().addAll(afficherButton , supprimer );
                                     buttonsBox.setAlignment(Pos.CENTER_LEFT);
 
                                     hBox.getChildren().addAll(name, nom, prenom, buttonsBox);

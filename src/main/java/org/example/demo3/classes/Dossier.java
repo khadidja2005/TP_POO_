@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 public class Dossier implements Serializable {
     private static int numero = 1;
+    private  int doc_num = 0;
 
     private ArrayList<BO> BO = new ArrayList<BO>(20);
     private ArrayList<Rendez_vous> rendez_vous = new ArrayList<Rendez_vous>() ;
@@ -14,7 +15,8 @@ public class Dossier implements Serializable {
 
     // Default constructor
     public Dossier() {
-        incrementNumero(); // Increment numero each time an object is created
+        incrementNumero();
+        doc_num = numero;// Increment numero each time an object is created
     }
 
     // Constructor with parameters
@@ -27,7 +29,7 @@ public class Dossier implements Serializable {
 
     // Setter and getter for numero
     public int getNumero() {
-        return numero;
+        return doc_num;
     }
 
     public static void incrementNumero() {
@@ -78,6 +80,7 @@ public class Dossier implements Serializable {
     @Override
     public String toString() {
         return "Dossier{" +
+                "Numero" + doc_num +
                 "BO=" + BO +
                 ", rendez_vous=" + rendez_vous +
                 ", fichier_de_suivi=" + fichier_de_suivi +

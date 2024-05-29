@@ -124,7 +124,7 @@ public class HelloApplication extends Application {
         ec6.addTest(test9);
         ec6.addTest(test10);
         ec6.setObservation_clinique("Le patient a des difficultés à parler et à comprendre le langage oral");
-        /*BO bo1 = new BO();
+        BO bo1 = new BO();
         bo1.setNom_BO("BO1");
         bo1.setNumero_BO(false);
         bo1.ajouterEc(ec1);
@@ -164,7 +164,7 @@ public class HelloApplication extends Application {
         bo6.ajouterEc(ec2);
         bo6.ajouterEc(ec5);
         bo6.setNom_BO("bo_6");
-        bo6.setNumero_BO(false);*/
+        bo6.setNumero_BO(false);
         /*Manage_BO manageBo=new Manage_BO(10);
         manageBo.addBO(bo1);
         manageBo.addBO(bo2);

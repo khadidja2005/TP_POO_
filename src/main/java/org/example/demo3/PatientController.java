@@ -448,7 +448,6 @@ public class PatientController {
          PatientController controller = loader.getController();
 
          ArrayList<Rendez_vous> RDV = new ArrayList<Rendez_vous>();
-
          RDV = item_pat.getDosssier().get_rendez_vous();
          ObservableList<Rendez_vous> list_RDV = FXCollections.observableArrayList(RDV);
          System.out.println("ObservableList contents: " + list_RDV);
@@ -519,7 +518,8 @@ public class PatientController {
         stage.show();
 
 
-     }catch (IOException ex) {
+     }
+     catch (IOException ex) {
          ex.printStackTrace();
          System.out.println("Error: " + ex.getMessage());
 

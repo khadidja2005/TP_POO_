@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import org.example.demo3.classes.*;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class HelloApplication extends Application {
     private static Stage primaryStage;
@@ -123,7 +124,7 @@ public class HelloApplication extends Application {
         ec6.addTest(test9);
         ec6.addTest(test10);
         ec6.setObservation_clinique("Le patient a des difficultés à parler et à comprendre le langage oral");
-        BO bo1 = new BO();
+        /*BO bo1 = new BO();
         bo1.setNom_BO("BO1");
         bo1.setNumero_BO(false);
         bo1.ajouterEc(ec1);
@@ -132,6 +133,13 @@ public class HelloApplication extends Application {
         bo2.setNom_BO("BO2");
         bo2.setNumero_BO(false);
         bo2.ajouterEc(ec1);
+        bo2.ajouterEc(ec2);
+        Projet_therapeutique projet_therapeutique2 = new Projet_therapeutique("Le patient doit suivre des séances de rééducation orthophonique");
+        bo2.setProjet_therapeutique1(projet_therapeutique2);
+        Trouble trouble3 = new Trouble("trouble3" , Categorie_trouble.trouble_neuro_developpementaux);
+        Trouble trouble4 = new Trouble("trouble4" , Categorie_trouble.trouble_cognitifs);
+        bo2.setTrouble(new Trouble[]{trouble3 , trouble4});
+
         bo2.ajouterEc(ec6);
         BO bo3 = new BO();
         bo3.setNom_BO("BO_3");
@@ -156,7 +164,7 @@ public class HelloApplication extends Application {
         bo6.ajouterEc(ec2);
         bo6.ajouterEc(ec5);
         bo6.setNom_BO("bo_6");
-        bo6.setNumero_BO(false);
+        bo6.setNumero_BO(false);*/
         /*Manage_BO manageBo=new Manage_BO(10);
         manageBo.addBO(bo1);
         manageBo.addBO(bo2);
@@ -194,7 +202,7 @@ public class HelloApplication extends Application {
         //System.out.println(bo22.getBOs()[0].getEc()[0].getTest()[0].getCapacite());
         // #####################################################################################
         //##############  CREER PATIENT  ####################################################
-        /*Patient patient = new Patient();
+      /*  Patient patient = new Patient();
         patient.setAdresse("Oued Smar Alger");
         patient.setDate_de_naissance("02/02/2005");
         patient.setNom("Brakta");
